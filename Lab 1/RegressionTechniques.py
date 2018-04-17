@@ -139,8 +139,8 @@ class RegressionTechniques(Exception):
                     self.error = np.append(self.error, self.current_error)
 
                 if (self.current_error <= error_stopping_cond):
-                    print("No.of iterations required to reach stopping condn:"+str(i))
-                    self.logger.debug("No.of iterations required to reach stopping condn:"+str(i))
+                    
+                    self.logger.info("No.of iterations required to reach stopping condn:"+str(i))
                     self.yhat_test = self.x_test.dot (self.w_hat)
                     self.yhat_train = self.x_train.dot (self.w_hat
                                                         )
@@ -159,7 +159,7 @@ class RegressionTechniques(Exception):
         return self.w_hat,self.gradient,self.error,self.current_error
 
 
-    def steepestDescent_Hessian(self,stop_error_value,loop_limit,gamma):
+    def steepestDescent_Hessian(self,stop_error_value,loop_limit):
         # %%SOLUTION 3 ___Steepest descnet algorithm a.k.a Newton's method using Hessian matrix
         # mu=0, sigma= 0.1, size= 21 - 21 FEATURES. Random gaussian values
 
@@ -208,8 +208,7 @@ class RegressionTechniques(Exception):
                     self.error = np.append(self.error, self.current_error)
 
                 if (self.current_error <= error_stopping_cond):
-                    print("No.of iterations required to reach stopping condn:"+str(i))
-                    self.logger.debug("No.of iterations required to reach stopping condn:"+str(i))
+                    self.logger.info("Newton's method - No.of iterations required to reach stopping condn:"+str(i))
                     self.yhat_test = self.x_test.dot (self.w_hat)
                     self.yhat_train = self.x_train.dot (self.w_hat
                                                         )

@@ -121,6 +121,7 @@ if __name__ == "__main__":
             parkinson.logger.info("Creating the regrssion and plotter objects....")
             mse = RegressionTechniques(parkinson.x_train,parkinson.x_test,parkinson.y_train,parkinson.y_test)
             gd = RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test)
+            sd = RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test)
 
             """Calculate MSE with mean error taken per column"""
             parkinson.logger.info("Calculating MSE....")
@@ -155,6 +156,16 @@ if __name__ == "__main__":
             parkinson.logger.info("Plotting Gradient Descent....")
             selfPlotter.multiplot_sameX('Error_progression for Gradient descent','No.of Iterations','Change in E[w]',ChangeInError=gd.error)
 
+            """Find the local optimum weights using Steepest descent(Newton's method)- Faster than gradient descent"""
+            """Uses Hessian matrix(double derivative over the error in weights of the previous estimate) to reach the minimum soon"""
+            parkinson.logger.info ("Calculating using Steepest Descent(Newton's method)....")
+            """Stop error value- value identified from plotting the cost function value against no of iterations"""
+            sd.steepestDescent_Hessian (stop_error_value=0.096, loop_limit=100000)
+
+            """Plot the progression of error values for the gradient descent algorithm"""
+            parkinson.logger.info ("Plotting Steepest Descent....")
+            selfPlotter.multiplot_sameX ('Error_progression for Steepest descent', 'No.of Iterations', 'Change in E[w]',
+                                         ChangeInError=sd.error)
 
 
         except (ArithmeticError, OverflowError,FloatingPointError,ZeroDivisionError) as mathError:
