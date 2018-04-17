@@ -130,18 +130,18 @@ if __name__ == "__main__":
             """Plot actual training target vs estimated training target"""
             # --yhat_train versus y_train
             parkinson.logger.info("Plotting MSE....")
-            selfPlotter.multiplot_sameX('yhat_train vs y_train','features',target_field
+            selfPlotter.multiplot_sameX('MSE-yhat_train vs y_train','features',target_field
                                         ,originalData=parkinson.y_train,estimatedData=mse.yhat_train)
 
             """Plot actual testing target vs estimated testing target"""
             # --yhat_test versus y_test
-            selfPlotter.multiplot_sameX('yhat_test vs y_test', 'features',target_field,
+            selfPlotter.multiplot_sameX('MSE-yhat_test vs y_test', 'features',target_field,
                                         originalData=parkinson.y_test, estimatedData=mse.yhat_test)
 
             """Plot the mean square error distribution for the training and testing data as histograms"""
             # the histogram of the error
             #multiplot_subHists(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *bins, **yaxisTitleAndValue)
-            selfPlotter.multiplot_subHists(1,2,'error values','error count',1, 50,50,
+            selfPlotter.multiplot_subHists(1,2,'MSE-error values','MSE-error count',1, 50,50,
                                            training =mse.error_train,testing=mse.error_test)
 
 

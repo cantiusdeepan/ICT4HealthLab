@@ -139,7 +139,7 @@ class RegressionTechniques(Exception):
                     self.error = np.append(self.error, self.current_error)
 
                 if (self.current_error <= error_stopping_cond):
-                    
+
                     self.logger.info("No.of iterations required to reach stopping condn:"+str(i))
                     self.yhat_test = self.x_test.dot (self.w_hat)
                     self.yhat_train = self.x_train.dot (self.w_hat
