@@ -150,23 +150,32 @@ if __name__ == "__main__":
             gamma_value = 10 ** (-4)
             parkinson.logger.info("Calculating Gradient Descent....")
             """Stop error value- value identified from plotting the cost function value against no of iterations"""
-            gd.gradientDescent(stop_error_value = 0.096,loop_limit=100000,gamma=gamma_value)
+            gd.gradientDescent(stopping_condn = 10**-8,loop_limit=10**6,gamma=gamma_value)
 
             """Plot the progression of error values for the gradient descent algorithm"""
             parkinson.logger.info("Plotting Gradient Descent....")
             selfPlotter.multiplot_sameX('Error_progression for Gradient descent','No.of Iterations','Change in E[w]',ChangeInError=gd.error)
-
+            selfPlotter.multiplot_sameX('Parameter change for Gradient descent','No.of Iterations','Change in W',ChangeInW=gd.w_vector)
+            ##def multiplot_subplots_withXaxis(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,
+                                     ##**yaxisTitleAndValue)
+            selfPlotter.multiplot_subplots_withXaxis( 1, 1, 'W', 'E[W]', 1,gd.w_vector,
+                                             gradient_function = gd.error)
             """Find the local optimum weights using Steepest descent(Newton's method)- Faster than gradient descent"""
             """Uses Hessian matrix(double derivative over the error in weights of the previous estimate) to reach the minimum soon"""
             parkinson.logger.info ("Calculating using Steepest Descent(Newton's method)....")
             """Stop error value- value identified from plotting the cost function value against no of iterations"""
-            sd.steepestDescent_Hessian (stop_error_value=0.096, loop_limit=100000)
+            sd.steepestDescent_Hessian (stopping_condn=10**-8, loop_limit=10**6)
 
             """Plot the progression of error values for the gradient descent algorithm"""
             parkinson.logger.info ("Plotting Steepest Descent....")
             selfPlotter.multiplot_sameX ('Error_progression for Steepest descent', 'No.of Iterations', 'Change in E[w]',
                                          ChangeInError=sd.error)
+            selfPlotter.multiplot_sameX('Parameter change for Steepest descent','No.of Iterations','Change in W',ChangeInW=sd.w_vector)
 
+            ##def multiplot_subplots_withXaxis(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,
+                                     ##**yaxisTitleAndValue)
+            selfPlotter.multiplot_subplots_withXaxis( 1, 1, 'W', 'E[W]', 1,sd.w_vector,
+                                             gradient_function = sd.error)
 
         except (ArithmeticError, OverflowError,FloatingPointError,ZeroDivisionError) as mathError:
             parkinson.logger.error('Mathemtical Failure at main', exc_info=True)

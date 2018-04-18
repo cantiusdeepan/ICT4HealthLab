@@ -101,7 +101,7 @@ class RegressionTechniques(Exception):
 
         return self.yhat_train,self.error_train,self.yhat_test,self.error_test
 
-    def gradientDescent(self,stop_error_value,loop_limit,gamma):
+    def gradientDescent(self,stopping_condn,loop_limit,gamma):
         # %%------SOLUTION 2 ___Gradient algorithm
         # mu=0, sigma= 0.1, size= 21 - 21 FEATURES. Random gaussian values
         random.seed(40)
@@ -112,7 +112,8 @@ class RegressionTechniques(Exception):
 
         i = 0
         self.error = np.zeros(1)
-        error_stopping_cond = stop_error_value
+        self.w_vector = np.zeros(1)
+
 
         # re( ^w(i)) = -2XTy + 2XTX^w(i)
 
@@ -123,29 +124,34 @@ class RegressionTechniques(Exception):
             for i in range(loop_limit):
                 # Evaluate the gradient
 
-                init_w_hat = self.w_hat
+                prev_w_hat = self.w_hat
                 """Gradient is the partial differentiation over w of th error term E[W]"""
-                self.gradient = self.calcaulate_gradient(init_w_hat)
+                self.gradient = self.calcaulate_gradient(prev_w_hat)
 
-                self.w_hat = (init_w_hat - np.multiply(gamma, self.gradient))
+                self.w_hat = (prev_w_hat - np.multiply(gamma, self.gradient))
 
                 self.yhat_train = self.x_train.dot (self.w_hat)
 
                 """Calculating the error for the parameter values at iteration  """
+
                 self.current_error = np.square (self.yhat_train - self.y_train).mean (axis=0)
                 if (i == 0):
                     np.put(self.error, i, self.current_error)
+                    np.put(self.w_vector,i,np.linalg.norm(self.w_hat))
+
                 elif (i > 0):
                     self.error = np.append(self.error, self.current_error)
+                    self.w_vector = np.append (self.w_vector, np.linalg.norm(self.w_hat))
 
-                if (self.current_error <= error_stopping_cond):
+                    if (abs(self.error[i-1] - self.current_error) <= stopping_condn or i >= loop_limit-1):
+                        self.logger.info("GD- Final Change in Error:"+str((self.error[i-1] - self.current_error)))
+                        self.logger.info ("GD- Final Change in W:" + str ((self.w_vector[i-1] - self.w_vector[i])))
+                        self.logger.info("Gradient Descent - No.of iterations required to reach stopping condn:"+str(i))
+                        self.logger.info("Gradient Descent - Value of error at stopping condn:" + str(self.current_error))
+                        self.yhat_test = self.x_test.dot (self.w_hat)
+                        self.yhat_train = self.x_train.dot (self.w_hat)
 
-                    self.logger.info("No.of iterations required to reach stopping condn:"+str(i))
-                    self.yhat_test = self.x_test.dot (self.w_hat)
-                    self.yhat_train = self.x_train.dot (self.w_hat
-                                                        )
-
-                    break
+                        break
         except (SystemExit, KeyboardInterrupt):
             raise
         except (ArithmeticError, OverflowError,FloatingPointError,ZeroDivisionError) as mathError:
@@ -159,7 +165,7 @@ class RegressionTechniques(Exception):
         return self.w_hat,self.gradient,self.error,self.current_error
 
 
-    def steepestDescent_Hessian(self,stop_error_value,loop_limit):
+    def steepestDescent_Hessian(self,stopping_condn,loop_limit):
         # %%SOLUTION 3 ___Steepest descnet algorithm a.k.a Newton's method using Hessian matrix
         # mu=0, sigma= 0.1, size= 21 - 21 FEATURES. Random gaussian values
 
@@ -172,7 +178,7 @@ class RegressionTechniques(Exception):
 
         i = 0
         self.error = np.zeros(1)
-        error_stopping_cond = stop_error_value
+        self.w_vector = np.zeros (1)
 
         # re( ^w(i)) = -2XTy + 2XTX^w(i)
 
@@ -183,10 +189,10 @@ class RegressionTechniques(Exception):
             for i in range(loop_limit):
                 # Evaluate the gradient
 
-                init_w_hat = self.w_hat
+                prev_w_hat = self.w_hat
 
                 """Gradient is the partial differentiation over w of th error term E[W]"""
-                self.gradient = self.calcaulate_gradient(init_w_hat)
+                self.gradient = self.calcaulate_gradient(prev_w_hat)
 
                 self.gradient_transpose = self.gradient.transpose()
 
@@ -196,24 +202,30 @@ class RegressionTechniques(Exception):
 
                 self.denom_learning_rate = (self.gradient_transpose.dot(self.hessian_matrix)).dot(self.gradient)
 
-                self.w_hat = (init_w_hat - np.divide(self.numer_learning_rate, self.denom_learning_rate))
+                self.w_hat = (prev_w_hat - np.divide(self.numer_learning_rate, self.denom_learning_rate))
 
                 self.yhat_train = self.x_train.dot (self.w_hat)
 
                 """Calculating the error for the parameter values at iteration  """
+
                 self.current_error = np.square (self.yhat_train - self.y_train).mean (axis=0)
                 if (i == 0):
                     np.put(self.error, i, self.current_error)
+                    np.put(self.w_vector,i,np.linalg.norm(self.w_hat))
+
                 elif (i > 0):
                     self.error = np.append(self.error, self.current_error)
+                    self.w_vector = np.append (self.w_vector, np.linalg.norm(self.w_hat))
 
-                if (self.current_error <= error_stopping_cond):
-                    self.logger.info("Newton's method - No.of iterations required to reach stopping condn:"+str(i))
-                    self.yhat_test = self.x_test.dot (self.w_hat)
-                    self.yhat_train = self.x_train.dot (self.w_hat
-                                                        )
+                    if (abs(self.error[i-1] - self.current_error) <= stopping_condn or i >= loop_limit-1):
+                        self.logger.info("Steepest Descent- Final Change in Error:"+str((self.error[i-1] - self.current_error)))
+                        self.logger.info ("Steepest Descent- Final Change in W:" + str ((self.w_vector[i-1] - self.w_vector[i])))
+                        self.logger.info("Steepest Descent - No.of iterations required to reach stopping condn:"+str(i))
+                        self.logger.info("Steepest Descent - Value of error at stopping condn:" + str(self.current_error))
+                        self.yhat_test = self.x_test.dot (self.w_hat)
+                        self.yhat_train = self.x_train.dot (self.w_hat)
 
-                    break
+                        break
         except (SystemExit, KeyboardInterrupt):
             raise
         except (ArithmeticError, OverflowError,FloatingPointError,ZeroDivisionError) as mathError:
