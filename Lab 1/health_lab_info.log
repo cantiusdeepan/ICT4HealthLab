@@ -623,3 +623,309 @@ Traceback (most recent call last):
   File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 283, in ridgeRegression
     self.data = np.concatenate ((self.x_train, self.y_train), axis=1)
 ValueError: all the input arrays must have same number of dimensions
+2018-05-07 01:01:43,152 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:01:43,185 - __main__ - INFO - Creating the regrssion and plotter objects....
+2018-05-07 01:01:43,189 - __main__ - INFO - Calculating MSE....
+2018-05-07 01:01:43,190 - RegressionTechniques - ERROR - Failed to calculate MSE
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 88, in calculate_MSE
+    self.w=np.dot((np.linalg.pinv(self.x_train)),self.y_train)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 1647, in pinv
+    u, s, vt = svd(a, 0)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 1389, in svd
+    u, s, vt = gufunc(a, signature=signature, extobj=extobj)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 99, in _raise_linalgerror_svd_nonconvergence
+    raise LinAlgError("SVD did not converge")
+numpy.linalg.linalg.LinAlgError: SVD did not converge
+2018-05-07 01:01:43,199 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 129, in <module>
+    mse.calculate_MSE(mean_axis=0)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 88, in calculate_MSE
+    self.w=np.dot((np.linalg.pinv(self.x_train)),self.y_train)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 1647, in pinv
+    u, s, vt = svd(a, 0)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 1389, in svd
+    u, s, vt = gufunc(a, signature=signature, extobj=extobj)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 99, in _raise_linalgerror_svd_nonconvergence
+    raise LinAlgError("SVD did not converge")
+numpy.linalg.linalg.LinAlgError: SVD did not converge
+2018-05-07 01:02:14,941 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:02:14,975 - __main__ - INFO - Creating the regrssion and plotter objects....
+2018-05-07 01:02:14,979 - __main__ - INFO - Calculating MSE....
+2018-05-07 01:02:14,980 - RegressionTechniques - ERROR - Failed to calculate MSE
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 88, in calculate_MSE
+    self.w=np.dot((np.linalg.pinv(self.x_train)),self.y_train)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 1647, in pinv
+    u, s, vt = svd(a, 0)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 1389, in svd
+    u, s, vt = gufunc(a, signature=signature, extobj=extobj)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 99, in _raise_linalgerror_svd_nonconvergence
+    raise LinAlgError("SVD did not converge")
+numpy.linalg.linalg.LinAlgError: SVD did not converge
+2018-05-07 01:02:14,981 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 129, in <module>
+    mse.calculate_MSE(mean_axis=0)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 88, in calculate_MSE
+    self.w=np.dot((np.linalg.pinv(self.x_train)),self.y_train)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 1647, in pinv
+    u, s, vt = svd(a, 0)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 1389, in svd
+    u, s, vt = gufunc(a, signature=signature, extobj=extobj)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\linalg\linalg.py", line 99, in _raise_linalgerror_svd_nonconvergence
+    raise LinAlgError("SVD did not converge")
+numpy.linalg.linalg.LinAlgError: SVD did not converge
+2018-05-07 01:09:49,860 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:09:49,923 - __main__ - INFO - Creating the regrssion and plotter objects....
+2018-05-07 01:09:49,927 - __main__ - INFO - Calculating MSE....
+2018-05-07 01:09:49,929 - __main__ - INFO - Plotting MSE....
+2018-05-07 01:09:53,968 - __main__ - INFO - Calculating Gradient Descent....
+2018-05-07 01:09:56,703 - RegressionTechniques - INFO - GD- Final Change in Error:9.98533400409e-09
+2018-05-07 01:09:56,703 - RegressionTechniques - INFO - GD- Final Change in W:2.1420194507e-08
+2018-05-07 01:09:56,703 - RegressionTechniques - INFO - Gradient Descent - No.of iterations required to reach stopping condn:10109
+2018-05-07 01:09:56,703 - RegressionTechniques - INFO - Gradient Descent - Value of error at stopping condn:0.0352563303534
+2018-05-07 01:09:56,703 - __main__ - INFO - Plotting Gradient Descent....
+2018-05-07 01:10:00,447 - __main__ - INFO - Calculating using Steepest Descent(Newton's method)....
+2018-05-07 01:10:00,987 - RegressionTechniques - INFO - Steepest Descent- Final Change in Error:-5.11057102887e-09
+2018-05-07 01:10:00,987 - RegressionTechniques - INFO - Steepest Descent- Final Change in W:-1.5300793077e-08
+2018-05-07 01:10:00,987 - RegressionTechniques - INFO - Steepest Descent - No.of iterations required to reach stopping condn:1828
+2018-05-07 01:10:00,987 - RegressionTechniques - INFO - Steepest Descent - Value of error at stopping condn:0.0353674073732
+2018-05-07 01:10:00,988 - __main__ - INFO - Plotting Steepest Descent....
+2018-05-07 01:10:06,114 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 189, in <module>
+    rr.ridgeRegression (init_lambda=1,max_lamda=200,lambda_step=1,kfold_splits=5)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 287, in ridgeRegression
+    self.data = np.concatenate ((self.x_data, self.y_data), axis=1)
+ValueError: all the input arrays must have same number of dimensions
+2018-05-07 01:16:38,726 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:16:38,795 - __main__ - INFO - Creating the regrssion and plotter objects....
+2018-05-07 01:16:38,800 - __main__ - INFO - Calculating MSE....
+2018-05-07 01:16:38,802 - __main__ - INFO - Plotting MSE....
+2018-05-07 01:16:43,024 - __main__ - INFO - Calculating Gradient Descent....
+2018-05-07 01:16:43,438 - RegressionTechniques - INFO - GD- Final Change in Error:-4.0154832584e-09
+2018-05-07 01:16:43,439 - RegressionTechniques - INFO - GD- Final Change in W:6.1806290818e-05
+2018-05-07 01:16:43,439 - RegressionTechniques - INFO - Gradient Descent - No.of iterations required to reach stopping condn:1277
+2018-05-07 01:16:43,439 - RegressionTechniques - INFO - Gradient Descent - Value of error at stopping condn:0.0338614740935
+2018-05-07 01:16:43,439 - __main__ - INFO - Plotting Gradient Descent....
+2018-05-07 01:16:48,153 - __main__ - INFO - Calculating using Steepest Descent(Newton's method)....
+2018-05-07 01:16:48,362 - RegressionTechniques - INFO - Steepest Descent- Final Change in Error:6.28136308245e-09
+2018-05-07 01:16:48,362 - RegressionTechniques - INFO - Steepest Descent- Final Change in W:-3.28657750259e-06
+2018-05-07 01:16:48,363 - RegressionTechniques - INFO - Steepest Descent - No.of iterations required to reach stopping condn:600
+2018-05-07 01:16:48,363 - RegressionTechniques - INFO - Steepest Descent - Value of error at stopping condn:0.0357627500601
+2018-05-07 01:16:48,363 - __main__ - INFO - Plotting Steepest Descent....
+2018-05-07 01:16:54,187 - RegressionTechniques - ERROR - Failed to calculate ridge regression
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 305, in ridgeRegression
+    x_train_data = train_data[FO].values
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2018-05-07 01:16:54,189 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 188, in <module>
+    rr.ridgeRegression (init_lambda=1,max_lamda=200,lambda_step=1,kfold_splits=5)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 305, in ridgeRegression
+    x_train_data = train_data[FO].values
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2018-05-07 01:21:38,669 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:21:38,730 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.data = np.concatenate ((self.x_data, self.y_data), axis=1)
+AttributeError: 'Parkinsons_main' object has no attribute 'x_data'
+2018-05-07 01:21:38,731 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 126, in <module>
+    parkinson.readAndPrepCSVdata(target_field)
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.data = np.concatenate ((self.x_data, self.y_data), axis=1)
+AttributeError: 'Parkinsons_main' object has no attribute 'x_data'
+2018-05-07 01:22:03,750 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:22:03,818 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.data = np.concatenate ((self.x_data, self.y_data), axis=1)
+ValueError: all the input arrays must have same number of dimensions
+2018-05-07 01:22:03,821 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 126, in <module>
+    parkinson.readAndPrepCSVdata(target_field)
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.data = np.concatenate ((self.x_data, self.y_data), axis=1)
+ValueError: all the input arrays must have same number of dimensions
+2018-05-07 01:22:03,876 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:22:03,944 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.data = np.concatenate ((self.x_data, self.y_data), axis=1)
+ValueError: all the input arrays must have same number of dimensions
+2018-05-07 01:22:03,945 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 126, in <module>
+    parkinson.readAndPrepCSVdata(target_field)
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.data = np.concatenate ((self.x_data, self.y_data), axis=1)
+ValueError: all the input arrays must have same number of dimensions
+2018-05-07 01:25:42,038 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:25:42,094 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.data = np.concatenate ((self.x_data, self.y_data[:,:]), axis=1)
+IndexError: too many indices for array
+2018-05-07 01:25:42,095 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 126, in <module>
+    parkinson.readAndPrepCSVdata(target_field)
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.data = np.concatenate ((self.x_data, self.y_data[:,:]), axis=1)
+IndexError: too many indices for array
+2018-05-07 01:30:39,208 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:30:39,263 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\core\fromnumeric.py", line 57, in _wrapfunc
+    return getattr(obj, method)(*args, **kwds)
+TypeError: 'tuple' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(self.y_data.shape,1))
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\core\fromnumeric.py", line 232, in reshape
+    return _wrapfunc(a, 'reshape', newshape, order=order)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\core\fromnumeric.py", line 67, in _wrapfunc
+    return _wrapit(obj, method, *args, **kwds)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\core\fromnumeric.py", line 47, in _wrapit
+    result = getattr(asarray(obj), method)(*args, **kwds)
+TypeError: 'tuple' object cannot be interpreted as an integer
+2018-05-07 01:30:39,272 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\core\fromnumeric.py", line 57, in _wrapfunc
+    return getattr(obj, method)(*args, **kwds)
+TypeError: 'tuple' object cannot be interpreted as an integer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 128, in <module>
+    parkinson.readAndPrepCSVdata(target_field)
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(self.y_data.shape,1))
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\core\fromnumeric.py", line 232, in reshape
+    return _wrapfunc(a, 'reshape', newshape, order=order)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\core\fromnumeric.py", line 67, in _wrapfunc
+    return _wrapit(obj, method, *args, **kwds)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\numpy\core\fromnumeric.py", line 47, in _wrapit
+    result = getattr(asarray(obj), method)(*args, **kwds)
+TypeError: 'tuple' object cannot be interpreted as an integer
+2018-05-07 01:31:49,940 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:31:49,996 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(int(self.y_data.shape),1))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+2018-05-07 01:31:49,996 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 128, in <module>
+    parkinson.readAndPrepCSVdata(target_field)
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 103, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(int(self.y_data.shape),1))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+2018-05-07 01:32:26,894 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:32:26,950 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 105, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(int(self.y_data.shape),1))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+2018-05-07 01:32:26,950 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 130, in <module>
+    parkinson.readAndPrepCSVdata(target_field)
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 105, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(int(self.y_data.shape),1))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+2018-05-07 01:32:51,473 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:32:51,531 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 105, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(int(self.y_data.shape),1))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+2018-05-07 01:32:51,532 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 130, in <module>
+    parkinson.readAndPrepCSVdata(target_field)
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 105, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(int(self.y_data.shape),1))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+2018-05-07 01:33:06,625 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:33:06,682 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 105, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(int(self.y_data.shape),1))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+2018-05-07 01:33:06,682 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 130, in <module>
+    parkinson.readAndPrepCSVdata(target_field)
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 105, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(int(self.y_data.shape),1))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+2018-05-07 01:33:17,928 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:33:17,984 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 105, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(int(self.y_data.shape),1))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+2018-05-07 01:33:17,985 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 130, in <module>
+    parkinson.readAndPrepCSVdata(target_field)
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 105, in readAndPrepCSVdata
+    self.y_data = np.reshape(self.y_data,(int(self.y_data.shape),1))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+2018-05-07 01:33:52,286 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:33:52,349 - __main__ - INFO - Creating the regrssion and plotter objects....
+2018-05-07 01:33:52,353 - __main__ - INFO - Calculating MSE....
+2018-05-07 01:33:52,355 - __main__ - INFO - Plotting MSE....
+2018-05-07 01:33:56,631 - __main__ - INFO - Calculating Gradient Descent....
+2018-05-07 01:34:04,067 - RegressionTechniques - INFO - GD- Final Change in Error:9.99857729944e-09
+2018-05-07 01:34:04,067 - RegressionTechniques - INFO - GD- Final Change in W:-6.5488125145e-08
+2018-05-07 01:34:04,067 - RegressionTechniques - INFO - Gradient Descent - No.of iterations required to reach stopping condn:27439
+2018-05-07 01:34:04,067 - RegressionTechniques - INFO - Gradient Descent - Value of error at stopping condn:0.0354169496749
+2018-05-07 01:34:04,068 - __main__ - INFO - Plotting Gradient Descent....
+2018-05-07 01:34:08,435 - __main__ - INFO - Calculating using Steepest Descent(Newton's method)....
+2018-05-07 01:34:08,704 - RegressionTechniques - INFO - Steepest Descent- Final Change in Error:-6.61550514369e-09
+2018-05-07 01:34:08,704 - RegressionTechniques - INFO - Steepest Descent- Final Change in W:-1.6174357893e-06
+2018-05-07 01:34:08,704 - RegressionTechniques - INFO - Steepest Descent - No.of iterations required to reach stopping condn:902
+2018-05-07 01:34:08,704 - RegressionTechniques - INFO - Steepest Descent - Value of error at stopping condn:0.0356188489377
+2018-05-07 01:34:08,705 - __main__ - INFO - Plotting Steepest Descent....
+2018-05-07 01:34:14,359 - RegressionTechniques - ERROR - Failed to calculate ridge regression
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 305, in ridgeRegression
+    x_train_data = train_data[FO].values
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2018-05-07 01:34:14,361 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 198, in <module>
+    rr.ridgeRegression (init_lambda=1,max_lamda=200,lambda_step=1,kfold_splits=5)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 305, in ridgeRegression
+    x_train_data = train_data[FO].values
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2018-05-07 01:35:01,044 - __main__ - INFO - Starting to read the CSV....
+2018-05-07 01:35:01,106 - __main__ - INFO - Creating the regrssion and plotter objects....
+2018-05-07 01:35:01,110 - __main__ - INFO - Calculating MSE....
+2018-05-07 01:35:01,112 - __main__ - INFO - Plotting MSE....
+2018-05-07 01:35:05,902 - __main__ - INFO - Calculating Gradient Descent....
+2018-05-07 01:35:13,186 - RegressionTechniques - INFO - GD- Final Change in Error:9.99975235949e-09
+2018-05-07 01:35:13,187 - RegressionTechniques - INFO - GD- Final Change in W:-4.18614460873e-07
+2018-05-07 01:35:13,187 - RegressionTechniques - INFO - Gradient Descent - No.of iterations required to reach stopping condn:27435
+2018-05-07 01:35:13,187 - RegressionTechniques - INFO - Gradient Descent - Value of error at stopping condn:0.0354291305705
+2018-05-07 01:35:13,187 - __main__ - INFO - Plotting Gradient Descent....
+2018-05-07 01:35:17,453 - __main__ - INFO - Calculating using Steepest Descent(Newton's method)....
+2018-05-07 01:35:17,637 - RegressionTechniques - INFO - Steepest Descent- Final Change in Error:6.41221663267e-09
+2018-05-07 01:35:17,637 - RegressionTechniques - INFO - Steepest Descent- Final Change in W:0.000725824120718
+2018-05-07 01:35:17,637 - RegressionTechniques - INFO - Steepest Descent - No.of iterations required to reach stopping condn:556
+2018-05-07 01:35:17,637 - RegressionTechniques - INFO - Steepest Descent - Value of error at stopping condn:0.032873368775
+2018-05-07 01:35:17,637 - __main__ - INFO - Plotting Steepest Descent....
+2018-05-07 01:35:23,001 - __main__ - INFO - Plotting RIDGE Regression....

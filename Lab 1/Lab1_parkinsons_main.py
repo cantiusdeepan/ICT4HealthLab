@@ -7,6 +7,7 @@ import logging.config
 import os
 import json
 import codecs
+import numpy as np
 
 class Parkinsons_main(Exception):
     def __init__(self):
@@ -67,6 +68,7 @@ class Parkinsons_main(Exception):
             self.logger.debug("Seperating training and testing data...")
             data_train = df.pipe(lambda d: d[d["subject#"] < 37])
             data_test = df.pipe(lambda d: d[d["subject#"] > 36])
+            data  = df.pipe(lambda d: d[d["subject#"] > 0])
 
             """Normalize data_train--> get mean values for measured features for a given subject and time"""
             """Normalisation is done by taking and applying the mean and standard deviation of the training data to 
@@ -78,7 +80,7 @@ class Parkinsons_main(Exception):
             data_train_norm = ((data_train - data_train_mean) / data_train_std_dev)
             # Normalize data_test with mean and variance of data_train
             data_test_norm = ((data_test - data_train_mean) / data_train_std_dev)
-
+            data_norm = ((data - data_train_mean) / data_train_std_dev)
             """The chosen target can be either total UPDRS or Jitter % - Jitter % produced better results"""
             # ---Data to work with
             FO = target_field
@@ -94,6 +96,17 @@ class Parkinsons_main(Exception):
             # Organise the test data too
             self.y_test = data_test_norm[FO].values
             self.x_test = data_test_norm.drop([FO], axis=1).values
+
+            self.y_data = data_norm[FO].values
+            self.x_data = data_norm.drop([FO], axis=1).values
+
+            print ("HI:",int(self.y_data.shape[0]))
+
+            self.y_data = np.reshape(self.y_data,(int(self.y_data.shape[0]),1))
+
+            self.data = np.concatenate ((self.x_data, self.y_data), axis=1)
+
+
         except (ArithmeticError, OverflowError,FloatingPointError,ZeroDivisionError) as mathError:
             self.logger.error('Math error - Failed to prepare the csv data', exc_info=True)
             raise
@@ -119,10 +132,14 @@ if __name__ == "__main__":
             """Create objects for custom plotter class and regression techniques classes"""
             selfPlotter = CustomPlotter()
             parkinson.logger.info("Creating the regrssion and plotter objects....")
-            mse = RegressionTechniques(parkinson.x_train,parkinson.x_test,parkinson.y_train,parkinson.y_test)
-            gd = RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test)
-            sd = RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test)
-            rr =  RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test)
+
+            mse = RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test,parkinson.data)
+
+            gd = RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test,parkinson.data)
+
+            sd = RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test,parkinson.data)
+
+            rr =  RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test,parkinson.data)
 
             """Calculate MSE with mean error taken per column"""
             parkinson.logger.info("Calculating MSE....")

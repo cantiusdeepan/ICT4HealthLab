@@ -6,11 +6,12 @@ from sklearn.model_selection import KFold
 import json
 
 class RegressionTechniques(Exception):
-    def __init__(self,x_train,x_test,y_train,y_test):
+    def __init__(self,x_train,x_test,y_train,y_test,data):
         self.x_train = x_train
         self.x_test = x_test
         self.y_train = y_train
         self.y_test = y_test
+        self.data = data
         self.x_train_transpose = x_train.transpose()
 
         self.logger = logging.getLogger(__name__)
@@ -43,6 +44,7 @@ class RegressionTechniques(Exception):
                     }
                 }
             })
+
 
     def calculate_Hessian(self):
         return (np.multiply (self.x_train_transpose.dot (self.x_train), 4))
@@ -278,10 +280,10 @@ class RegressionTechniques(Exception):
         # I have a stopping condition for the number of diff lambda checks,
 
         """Combine the test and train data to enable K-fold splitting"""
-        self.x_data = np.concatenate ((self.x_train, self.x_test), axis=0)
-        self.y_data = np.concatenate ((self.y_train, self.y_test), axis=0)
+        #self.x_data = np.concatenate ((self.x_train, self.x_test), axis=0)
+        #self.y_data = np.concatenate ((self.y_train, self.y_test), axis=0)
 
-        #self.data = np.concatenate ((self.x_train, self.y_train), axis=1)
+        #self.data = np.concatenate ((self.x_data, self.y_data), axis=1)
         self.logger.debug ("Start loop for RIDGE regression")
 
         try:
@@ -299,6 +301,12 @@ class RegressionTechniques(Exception):
                     """After combining test and train data-split target and domain based on k-fold split"""
                     train_data_split = np.hsplit (train_data, np.array ([-1]))
                     test_data_split = np.hsplit (test_data, np.array ([-1]))
+                    #FO = "total_UPDRS"
+                    #x_train_data = train_data[FO].values
+                    #y_train_data = train_data.drop ([FO], axis=1).values
+                    #x_test_data = test_data[FO].values
+                    #y_test_data = test_data.drop ([FO], axis=1).values
+
                     x_train_data = train_data_split[0]
                     x_test_data = test_data_split[0]
                     y_train_data = train_data_split[1]
