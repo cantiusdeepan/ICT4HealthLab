@@ -1,0 +1,130 @@
+2018-03-27 19:36:15,053 - RegressionTechniques - ERROR - Failed to calculate gradient descent
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/RegressionTechniques.py", line 131, in gradientDescent
+    print("No.of iterations required to reach stopping condn:"+i)
+TypeError: must be str, not int
+2018-03-27 19:36:15,054 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 150, in <module>
+    gd.gradientDescent(0.0001,100000,gamma_value)
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/RegressionTechniques.py", line 131, in gradientDescent
+    print("No.of iterations required to reach stopping condn:"+i)
+TypeError: must be str, not int
+2018-04-06 23:10:48,233 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\CustomPlotter.py", line 188, in multiplot_subHists
+    ax.hist(values[i], bins=bin_values[i], density=1, facecolor='g')
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\__init__.py", line 1898, in inner
+    return func(ax, *args, **kwargs)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_axes.py", line 6389, in hist
+    p.update(kwargs)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\artist.py", line 885, in update
+    for k, v in props.items()]
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\artist.py", line 885, in <listcomp>
+    for k, v in props.items()]
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\artist.py", line 878, in _update_property
+    raise AttributeError('Unknown property %s' % k)
+AttributeError: Unknown property density
+2018-04-06 23:10:48,252 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 144, in <module>
+    training =mse.error_train,testing=mse.error_test)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\CustomPlotter.py", line 188, in multiplot_subHists
+    ax.hist(values[i], bins=bin_values[i], density=1, facecolor='g')
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\__init__.py", line 1898, in inner
+    return func(ax, *args, **kwargs)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_axes.py", line 6389, in hist
+    p.update(kwargs)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\artist.py", line 885, in update
+    for k, v in props.items()]
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\artist.py", line 885, in <listcomp>
+    for k, v in props.items()]
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\artist.py", line 878, in _update_property
+    raise AttributeError('Unknown property %s' % k)
+AttributeError: Unknown property density
+2018-04-08 21:00:30,606 - RegressionTechniques - ERROR - Failed to calculate gradient descent
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 137, in gradientDescent
+    self.yhat_test = self.x_test.dot (self.w)
+AttributeError: 'RegressionTechniques' object has no attribute 'w'
+2018-04-08 21:00:30,612 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 152, in <module>
+    gd.gradientDescent(stop_error_value = 0.096,loop_limit=100000,gamma=gamma_value)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 137, in gradientDescent
+    self.yhat_test = self.x_test.dot (self.w)
+AttributeError: 'RegressionTechniques' object has no attribute 'w'
+2018-04-18 01:56:43,582 - RegressionTechniques - ERROR - Failed to calculate gradient descent
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 148, in gradientDescent
+    self.logger.info ("Gradient Descent - Value of error at stopping condn:" + self.current_error)
+TypeError: ufunc 'add' did not contain a loop with signature matching types dtype('<U52') dtype('<U52') dtype('<U52')
+2018-04-18 01:56:43,587 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 153, in <module>
+    gd.gradientDescent(stop_error_value = 0.001,loop_limit=10**6,gamma=gamma_value)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 148, in gradientDescent
+    self.logger.info ("Gradient Descent - Value of error at stopping condn:" + self.current_error)
+TypeError: ufunc 'add' did not contain a loop with signature matching types dtype('<U52') dtype('<U52') dtype('<U52')
+2018-04-18 02:08:52,407 - RegressionTechniques - ERROR - Failed to calculate gradient descent
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 136, in gradientDescent
+    self.prev_error=self.current_error
+AttributeError: 'RegressionTechniques' object has no attribute 'current_error'
+2018-04-18 02:08:52,410 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 153, in <module>
+    gd.gradientDescent(stop_error_value = 0.095,loop_limit=10**6,gamma=gamma_value)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 136, in gradientDescent
+    self.prev_error=self.current_error
+AttributeError: 'RegressionTechniques' object has no attribute 'current_error'
+2018-04-18 02:11:20,235 - RegressionTechniques - ERROR - Failed to calculate gradient descent
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 146, in gradientDescent
+    if ((self.error[i-1] - self.current_error) <= error_stopping_cond or i >= loop_limit-1):
+IndexError: index 1 is out of bounds for axis 0 with size 1
+2018-04-18 02:11:20,237 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 153, in <module>
+    gd.gradientDescent(stop_error_value = 0.095,loop_limit=10**6,gamma=gamma_value)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 146, in gradientDescent
+    if ((self.error[i-1] - self.current_error) <= error_stopping_cond or i >= loop_limit-1):
+IndexError: index 1 is out of bounds for axis 0 with size 1
+2018-04-18 02:29:41,212 - RegressionTechniques - ERROR - Failed to calculate gradient descent
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 147, in gradientDescent
+    if ((self.w_vector[i-1] - self.w_hat) <= stopping_condn or i >= loop_limit - 1):
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2018-04-18 02:29:41,213 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 153, in <module>
+    gd.gradientDescent(stopping_condn = 10**-3,loop_limit=10**6,gamma=gamma_value)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 147, in gradientDescent
+    if ((self.w_vector[i-1] - self.w_hat) <= stopping_condn or i >= loop_limit - 1):
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2018-04-18 02:30:42,855 - RegressionTechniques - ERROR - Failed to calculate gradient descent
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 149, in gradientDescent
+    self.logger.info ("GD- Final Change in W:" + str ((self.w_vector[i-1] - self.self.w_vector[i])))
+AttributeError: 'RegressionTechniques' object has no attribute 'self'
+2018-04-18 02:30:42,856 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 153, in <module>
+    gd.gradientDescent(stopping_condn = 10**-3,loop_limit=10**6,gamma=gamma_value)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 149, in gradientDescent
+    self.logger.info ("GD- Final Change in W:" + str ((self.w_vector[i-1] - self.self.w_vector[i])))
+AttributeError: 'RegressionTechniques' object has no attribute 'self'
+2018-05-07 00:48:24,822 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 181, in <module>
+    rr.ridgeRegression (init_lambda=1,max_lamda=200,lambda_step=1,kfold_splits=5)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 283, in ridgeRegression
+    self.data = np.concatenate ((self.x_data, self.y_data), axis=1)
+ValueError: all the input arrays must have same number of dimensions
+2018-05-07 00:54:28,348 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 181, in <module>
+    rr.ridgeRegression (init_lambda=1,max_lamda=200,lambda_step=1,kfold_splits=5)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 283, in ridgeRegression
+    self.data = np.concatenate ((self.x_train, self.y_train), axis=1)
+ValueError: all the input arrays must have same number of dimensions
