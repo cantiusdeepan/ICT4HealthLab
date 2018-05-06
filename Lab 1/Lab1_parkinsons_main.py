@@ -122,6 +122,7 @@ if __name__ == "__main__":
             mse = RegressionTechniques(parkinson.x_train,parkinson.x_test,parkinson.y_train,parkinson.y_test)
             gd = RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test)
             sd = RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test)
+            rr =  RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test)
 
             """Calculate MSE with mean error taken per column"""
             parkinson.logger.info("Calculating MSE....")
@@ -175,7 +176,23 @@ if __name__ == "__main__":
             ##def multiplot_subplots_withXaxis(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,
                                      ##**yaxisTitleAndValue)
             selfPlotter.multiplot_subplots_withXaxis( 1, 1, 'W', 'E[W]', 1,sd.w_vector,
-                                             gradient_function = sd.error)
+                                             steepest_descent = sd.error)
+
+            rr.ridgeRegression (init_lambda=1,max_lamda=200,lambda_step=1,kfold_splits=5)
+
+            """Plot the progression of error values for the ridge regression algorithm"""
+            parkinson.logger.info ("Plotting RIDGE Regression....")
+            selfPlotter.multiplot_sameX ('Error_progression for RIDGE Regression', 'Lambda_Value', 'Change in E[w]',
+                                         ChangeInError=rr.error)
+            selfPlotter.multiplot_sameX ('Parameter change for RIDGE Regression', 'Lambda_Value', 'Change in W',
+                                         ChangeInW=rr.w_vector)
+
+
+            ##def multiplot_subplots_withXaxis(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,
+            ##**yaxisTitleAndValue)
+            selfPlotter.multiplot_subplots_withXaxis (1, 1, 'W', 'E[W]', 1, sd.w_vector,
+                                                      ridge_regression_error=sd.error)
+
 
         except (ArithmeticError, OverflowError,FloatingPointError,ZeroDivisionError) as mathError:
             parkinson.logger.error('Mathemtical Failure at main', exc_info=True)

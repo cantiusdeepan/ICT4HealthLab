@@ -2,6 +2,7 @@ import random
 import numpy as np
 import logging
 import os
+from sklearn.model_selection import KFold
 import json
 
 class RegressionTechniques(Exception):
@@ -50,6 +51,19 @@ class RegressionTechniques(Exception):
 
         return (np.multiply ((self.x_train_transpose.dot (self.y_train)), -2) + np.multiply (
             ((self.x_train_transpose.dot (self.x_train)).dot (init_w_hat)), 2))
+
+    def calculate_ridge_estimate(self,x_train_data,y_train_data,lambda_penalty):
+
+        size = np.shape (x_train_data)
+        identity = np.identity(size[1])
+
+        temp_xTXinv_ridge = (np.linalg.inv(x_train_data.T.dot(x_train_data) + lambda_penalty * identity))
+        self.w_hat = (temp_xTXinv_ridge.dot(x_train_data.T)).dot(y_train_data)
+        return self.w_hat
+
+
+
+
 
     def calculate_MSE(self,mean_axis=0):
 
@@ -131,10 +145,11 @@ class RegressionTechniques(Exception):
                 self.w_hat = (prev_w_hat - np.multiply(gamma, self.gradient))
 
                 self.yhat_train = self.x_train.dot (self.w_hat)
+                self.yhat_test = self.x_test.dot (self.w_hat)
 
                 """Calculating the error for the parameter values at iteration  """
 
-                self.current_error = np.square (self.yhat_train - self.y_train).mean (axis=0)
+                self.current_error = np.square (self.yhat_test - self.y_test).mean (axis=0)
                 if (i == 0):
                     np.put(self.error, i, self.current_error)
                     np.put(self.w_vector,i,np.linalg.norm(self.w_hat))
@@ -205,10 +220,11 @@ class RegressionTechniques(Exception):
                 self.w_hat = (prev_w_hat - np.divide(self.numer_learning_rate, self.denom_learning_rate))
 
                 self.yhat_train = self.x_train.dot (self.w_hat)
+                self.yhat_test = self.x_test.dot (self.w_hat)
 
                 """Calculating the error for the parameter values at iteration  """
 
-                self.current_error = np.square (self.yhat_train - self.y_train).mean (axis=0)
+                self.current_error = np.square (self.yhat_test - self.y_test).mean (axis=0)
                 if (i == 0):
                     np.put(self.error, i, self.current_error)
                     np.put(self.w_vector,i,np.linalg.norm(self.w_hat))
@@ -237,6 +253,109 @@ class RegressionTechniques(Exception):
             raise
 
         return self.w_hat,self.gradient,self.error,self.current_error
+
+    def ridgeRegression(self,init_lambda,max_lamda,lambda_step,kfold_splits):
+        # %%------SOLUTION 4 ___Gradient algorithm with regularisation - RIDGE regression
+        # mu=0, sigma= 0.1, size= 21 - 21 FEATURES. Random gaussian values
+        random.seed(40)
+        init_w_hat = np.random.normal(0, 1, 21)
+
+        self.w_hat = np.array(init_w_hat)
+
+
+        i = 0
+        self.error = np.zeros(1)
+        self.w_vector = np.zeros(1)
+        #Set up the lambda values for regularisation
+        #Loop until you find best lambda or stopping condn
+        lambda_current = init_lambda
+        best_lambda = lambda_current
+        loop_limit = int((max_lamda-init_lambda)/lambda_step)
+        prev_error = 999999999999
+
+        # re(w(i)) = inv (xTx +lamb(I)). xTy
+
+        # I have a stopping condition for the number of diff lambda checks,
+
+        """Combine the test and train data to enable K-fold splitting"""
+        self.x_data = np.concatenate ((self.x_train, self.x_test), axis=0)
+        self.y_data = np.concatenate ((self.y_train, self.y_test), axis=0)
+
+        #self.data = np.concatenate ((self.x_train, self.y_train), axis=1)
+        self.logger.debug ("Start loop for RIDGE regression")
+
+        try:
+            for i in range(loop_limit):
+
+                prev_w_hat = self.w_hat
+                """Calculate the w_estimate based on RIDGE regression equation"""
+
+                kf = KFold (n_splits=kfold_splits)
+                k = 0
+                fold_error = np.zeros (1)
+                for train, test in kf.split (self.data):
+                    train_data = np.array (self.data)[train]
+                    test_data = np.array (self.data)[test]
+                    """After combining test and train data-split target and domain based on k-fold split"""
+                    train_data_split = np.hsplit (train_data, np.array ([-1]))
+                    test_data_split = np.hsplit (test_data, np.array ([-1]))
+                    x_train_data = train_data_split[0]
+                    x_test_data = test_data_split[0]
+                    y_train_data = train_data_split[1]
+                    y_test_data = test_data_split[1]
+
+
+                    self.w_hat = self.calculate_ridge_estimate(x_train_data,y_train_data,lambda_current)
+                    yhat_test_data = x_test_data.dot (self.w_hat)
+
+
+                    """Calculating the error for the parameter values at iteration using test values """
+
+                    current_fold_error = np.square (yhat_test_data - y_test_data).mean (axis=0)
+                    if (k == 0):
+                        np.put (fold_error, k, current_fold_error)
+
+                    elif (k > 0):
+                        fold_error = np.append (fold_error, current_fold_error)
+                    k = k+1
+
+                """Check for the best lambda value by calculating the mean error of the k-folds for current lambda"""
+                self.current_error = fold_error.mean(axis=0)
+
+                if self.current_error < prev_error:
+                    best_lambda = lambda_current
+
+                prev_error = self.current_error
+                lambda_current = lambda_current + lambda_step
+
+                if (i == 0):
+                    np.put(self.error, i, self.current_error)
+                    np.put(self.w_vector,i,np.linalg.norm(self.w_hat))
+
+                elif (i > 0):
+                    self.error = np.append(self.error, self.current_error)
+                    self.w_vector = np.append (self.w_vector, np.linalg.norm(self.w_hat))
+
+            """Best lambda was found using K-fold, now use it calculate W using the generic x_train and y_train"""
+            self.w_hat = self.calculate_ridge_estimate(self.x_train,self.y_train,best_lambda)
+
+            self.yhat_train = self.x_train.dot (self.w_hat)
+            self.yhat_test = self.x_test.dot (self.w_hat)
+
+
+
+        except (SystemExit, KeyboardInterrupt):
+            raise
+        except (ArithmeticError, OverflowError,FloatingPointError,ZeroDivisionError) as mathError:
+            self.logger.error('Math error - Failed to prepare the csv data', exc_info=True)
+            raise
+
+        except Exception as e:
+            self.logger.error('Failed to calculate ridge regression', exc_info=True)
+            raise
+
+        return self.w_hat,self.error,self.current_error,best_lambda
+
 
 
 
