@@ -353,3 +353,176 @@ Traceback (most recent call last):
   File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 305, in ridgeRegression
     x_train_data = train_data[FO].values
 IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2018-05-07 15:50:42,644 - RegressionTechniques - ERROR - Failed to calculate ridge regression
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 344, in ridgeRegression
+    if self.current_error_train_test_variance < prev_error_train_test_variance:
+UnboundLocalError: local variable 'prev_error_train_test_variance' referenced before assignment
+2018-05-07 15:50:42,650 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 197, in <module>
+    rr.ridgeRegression (init_lambda=1,max_lamda=200,lambda_step=1,kfold_splits=5)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 344, in ridgeRegression
+    if self.current_error_train_test_variance < prev_error_train_test_variance:
+UnboundLocalError: local variable 'prev_error_train_test_variance' referenced before assignment
+2018-05-07 15:56:51,955 - RegressionTechniques - ERROR - Failed to calculate ridge regression
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 370, in ridgeRegression
+    self.logger.info ("RIDGE-REGRESSION: ERROR VALUE FOR best lambda value:", self.final_error[0])
+IndexError: invalid index to scalar variable.
+2018-05-07 15:56:51,956 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 197, in <module>
+    rr.ridgeRegression (init_lambda=1,max_lamda=200,lambda_step=1,kfold_splits=5)
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab1\RegressionTechniques.py", line 370, in ridgeRegression
+    self.logger.info ("RIDGE-REGRESSION: ERROR VALUE FOR best lambda value:", self.final_error[0])
+IndexError: invalid index to scalar variable.
+2018-05-09 02:18:10,885 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 163, in <module>
+    gd.gradientDescent(stopping_condn = 10**-8,loop_limit=10**6,gamma=gamma_value)
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/RegressionTechniques.py", line 182, in gradientDescent
+    return self.w_hat, self.gradient, self.error, self.current_error
+AttributeError: 'RegressionTechniques' object has no attribute 'error'
+2018-05-09 02:19:37,731 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 163, in <module>
+    gd.gradientDescent(stopping_condn = 10**-8,loop_limit=10**6,gamma=gamma_value)
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/RegressionTechniques.py", line 182, in gradientDescent
+    return self.w_hat, self.gradient, self.error, self.current_error
+AttributeError: 'RegressionTechniques' object has no attribute 'error'
+2018-05-09 02:19:53,497 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 167, in <module>
+    selfPlotter.multiplot_sameX('Error_progression for Gradient descent','No.of Iterations','Change in E[w]',ChangeInError=gd.error)
+AttributeError: 'RegressionTechniques' object has no attribute 'error'
+2018-05-09 02:22:22,184 - RegressionTechniques - ERROR - Failed to calculate gradient descent
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/RegressionTechniques.py", line 242, in steepestDescent_Hessian
+    if (abs(self.error_test[i - 1] - self.current_error) <= stopping_condn or i >= loop_limit - 1):
+AttributeError: 'RegressionTechniques' object has no attribute 'current_error'
+2018-05-09 02:22:22,190 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 186, in <module>
+    sd.steepestDescent_Hessian (stopping_condn=10**-8, loop_limit=10**6)
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/RegressionTechniques.py", line 242, in steepestDescent_Hessian
+    if (abs(self.error_test[i - 1] - self.current_error) <= stopping_condn or i >= loop_limit - 1):
+AttributeError: 'RegressionTechniques' object has no attribute 'current_error'
+2018-05-09 02:22:52,086 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/CustomPlotter.py", line 80, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-05-09 02:22:52,091 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 216, in <module>
+    ChangeInErrorTrain=rr.error_train,ChangeInErrorTest=rr.error_test)
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/CustomPlotter.py", line 80, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-05-09 02:26:10,315 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/CustomPlotter.py", line 80, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-05-09 02:26:10,320 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 216, in <module>
+    ChangeInErrorTrain=rr.error_train,ChangeInErrorTest=rr.error_test)
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/CustomPlotter.py", line 80, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-05-09 02:32:13,329 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/matplotlib/lines.py", line 1106, in set_linestyle
+    ls = ls_mapper_r[ls]
+KeyError: 'loosely dotted'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/CustomPlotter.py", line 71, in multiplot_sameX
+    color=next(self.colorStyle), label=key)
+  File "/usr/lib/python3.6/site-packages/matplotlib/pyplot.py", line 3358, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/matplotlib/__init__.py", line 1855, in inner
+    return func(ax, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/matplotlib/axes/_axes.py", line 1527, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/lib/python3.6/site-packages/matplotlib/axes/_base.py", line 406, in _grab_next_args
+    for seg in self._plot_args(this, kwargs):
+  File "/usr/lib/python3.6/site-packages/matplotlib/axes/_base.py", line 396, in _plot_args
+    seg = func(x[:, j % ncx], y[:, j % ncy], kw, kwargs)
+  File "/usr/lib/python3.6/site-packages/matplotlib/axes/_base.py", line 300, in _makeline
+    seg = mlines.Line2D(x, y, **kw)
+  File "/usr/lib/python3.6/site-packages/matplotlib/lines.py", line 391, in __init__
+    self.set_linestyle(linestyle)
+  File "/usr/lib/python3.6/site-packages/matplotlib/lines.py", line 1111, in set_linestyle
+    "valid values.").format(ls))
+ValueError: You passed in an invalid linestyle, `loosely dotted`.  See docs of Line2D.set_linestyle for valid values.
+2018-05-09 02:32:13,336 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/matplotlib/lines.py", line 1106, in set_linestyle
+    ls = ls_mapper_r[ls]
+KeyError: 'loosely dotted'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 167, in <module>
+    selfPlotter.multiplot_sameX('Error_progression for Gradient descent','No.of Iterations','Change in E[w]',ChangeInError_Training=gd.error_train,ChangeInError_Testing=gd.error_test)
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/CustomPlotter.py", line 71, in multiplot_sameX
+    color=next(self.colorStyle), label=key)
+  File "/usr/lib/python3.6/site-packages/matplotlib/pyplot.py", line 3358, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/matplotlib/__init__.py", line 1855, in inner
+    return func(ax, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/matplotlib/axes/_axes.py", line 1527, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/lib/python3.6/site-packages/matplotlib/axes/_base.py", line 406, in _grab_next_args
+    for seg in self._plot_args(this, kwargs):
+  File "/usr/lib/python3.6/site-packages/matplotlib/axes/_base.py", line 396, in _plot_args
+    seg = func(x[:, j % ncx], y[:, j % ncy], kw, kwargs)
+  File "/usr/lib/python3.6/site-packages/matplotlib/axes/_base.py", line 300, in _makeline
+    seg = mlines.Line2D(x, y, **kw)
+  File "/usr/lib/python3.6/site-packages/matplotlib/lines.py", line 391, in __init__
+    self.set_linestyle(linestyle)
+  File "/usr/lib/python3.6/site-packages/matplotlib/lines.py", line 1111, in set_linestyle
+    "valid values.").format(ls))
+ValueError: You passed in an invalid linestyle, `loosely dotted`.  See docs of Line2D.set_linestyle for valid values.
+2018-05-09 02:38:25,347 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/CustomPlotter.py", line 83, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-05-09 02:38:25,348 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 216, in <module>
+    ChangeInErrorTrain=rr.error_train,ChangeInErrorTest=rr.error_test)
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/CustomPlotter.py", line 83, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-05-09 02:43:56,925 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/CustomPlotter.py", line 81, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-05-09 02:43:56,929 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 216, in <module>
+    ChangeInErrorTrain=rr.error_train,ChangeInErrorTest=rr.error_test)
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/CustomPlotter.py", line 81, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-05-09 02:57:43,767 - RegressionTechniques - ERROR - Failed to calculate ridge regression
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/RegressionTechniques.py", line 381, in ridgeRegression
+    print(self.final_error)
+AttributeError: 'RegressionTechniques' object has no attribute 'final_error'
+2018-05-09 02:57:43,768 - __main__ - ERROR - Common failure at main
+Traceback (most recent call last):
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/Lab1_parkinsons_main.py", line 211, in <module>
+    rr.ridgeRegression (init_lambda=0,max_lamda=200,lambda_step=0.5,kfold_splits=5)
+  File "/mnt/CONTENT/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab1/RegressionTechniques.py", line 381, in ridgeRegression
+    print(self.final_error)
+AttributeError: 'RegressionTechniques' object has no attribute 'final_error'

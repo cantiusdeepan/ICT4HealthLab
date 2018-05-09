@@ -100,7 +100,6 @@ class Parkinsons_main(Exception):
             self.y_data = data_norm[FO].values
             self.x_data = data_norm.drop([FO], axis=1).values
 
-            print ("HI:",int(self.y_data.shape[0]))
 
             self.y_data = np.reshape(self.y_data,(int(self.y_data.shape[0]),1))
 
@@ -140,28 +139,21 @@ if __name__ == "__main__":
             sd = RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test,parkinson.data)
 
             rr =  RegressionTechniques(parkinson.x_train, parkinson.x_test, parkinson.y_train, parkinson.y_test,parkinson.data)
+            """########################################################################################################################################"""
+            """MSE"""
 
             """Calculate MSE with mean error taken per column"""
             parkinson.logger.info("Calculating MSE....")
             mse.calculate_MSE(mean_axis=0)
 
-            """Plot actual training target vs estimated training target"""
-            # --yhat_train versus y_train
-            parkinson.logger.info("Plotting MSE....")
-            selfPlotter.multiplot_sameX('MSE-yhat_train vs y_train','features',target_field
-                                        ,originalData=parkinson.y_train,estimatedData=mse.yhat_train)
-
-            """Plot actual testing target vs estimated testing target"""
-            # --yhat_test versus y_test
-            selfPlotter.multiplot_sameX('MSE-yhat_test vs y_test', 'features',target_field,
-                                        originalData=parkinson.y_test, estimatedData=mse.yhat_test)
 
             """Plot the mean square error distribution for the training and testing data as histograms"""
-            # the histogram of the error
+            """MSE- the histogram of the error- comparing ther error values for test and training data"""
             #multiplot_subHists(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *bins, **yaxisTitleAndValue)
-            selfPlotter.multiplot_subHists(1,2,'MSE-error values','MSE-error count',1, 50,50,
+            selfPlotter.multiplot_subHists('MSE- Training error vs Testing error',1,2,'MSE-error values','MSE-error count',1, 50,50,
                                            training =mse.error_train,testing=mse.error_test)
-
+            """########################################################################################################################################"""
+            """Gradient Descent"""
 
             """Find the local optimum weights using gradient descent"""
             """Gamma value- the learning rate for penalizing errors - Value arrived at by testing different values"""
@@ -172,12 +164,21 @@ if __name__ == "__main__":
 
             """Plot the progression of error values for the gradient descent algorithm"""
             parkinson.logger.info("Plotting Gradient Descent....")
-            selfPlotter.multiplot_sameX('Error_progression for Gradient descent','No.of Iterations','Change in E[w]',ChangeInError=gd.error)
+            selfPlotter.multiplot_sameX('Error_progression for Gradient descent','No.of Iterations','Change in E[w]',ChangeInError_Training=gd.error_train,ChangeInError_Testing=gd.error_test)
             selfPlotter.multiplot_sameX('Parameter change for Gradient descent','No.of Iterations','Change in W',ChangeInW=gd.w_vector)
-            ##def multiplot_subplots_withXaxis(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,
-                                     ##**yaxisTitleAndValue)
-            selfPlotter.multiplot_subplots_withXaxis( 1, 1, 'W', 'E[W]', 1,gd.w_vector,
-                                             gradient_function = gd.error)
+            ##def multiplot_subplots_withXaxis(self, title,sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,##**yaxisTitleAndValue)
+            selfPlotter.multiplot_subplots_withXaxis( 'Gradient Descent - W vs Error',1, 1, 'W', 'E[W]', 1,gd.w_vector,
+                                             gradient_function = gd.error_test)
+
+            """Gradient Descnt- the histogram of the error- comparing ther error values for test and training data"""
+            #multiplot_subHists(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *bins, **yaxisTitleAndValue)
+            selfPlotter.multiplot_subHists('Gradient descent- Training error vs Testing error',1,2,'GD-error values','GD-error count',1, 50,50,
+                                           training =gd.error_train,testing=gd.error_test)
+
+            """########################################################################################################################################"""
+            """STEEPEST DESCENT"""
+
+
             """Find the local optimum weights using Steepest descent(Newton's method)- Faster than gradient descent"""
             """Uses Hessian matrix(double derivative over the error in weights of the previous estimate) to reach the minimum soon"""
             parkinson.logger.info ("Calculating using Steepest Descent(Newton's method)....")
@@ -186,33 +187,71 @@ if __name__ == "__main__":
 
             """Plot the progression of error values for the gradient descent algorithm"""
             parkinson.logger.info ("Plotting Steepest Descent....")
-            selfPlotter.multiplot_sameX ('Error_progression for Steepest descent', 'No.of Iterations', 'Change in E[w]',
-                                         ChangeInError=sd.error)
+            selfPlotter.multiplot_sameX ('Error_progression for Steepest descent', 'No.of Iterations', 'Change in E[w]'
+            , ChangeInError_Training = sd.error_train, ChangeInError_Testing = sd.error_test)
             selfPlotter.multiplot_sameX('Parameter change for Steepest descent','No.of Iterations','Change in W',ChangeInW=sd.w_vector)
 
-            ##def multiplot_subplots_withXaxis(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,
-                                     ##**yaxisTitleAndValue)
-            selfPlotter.multiplot_subplots_withXaxis( 1, 1, 'W', 'E[W]', 1,sd.w_vector,
-                                             steepest_descent = sd.error)
+            ##def multiplot_subplots_withXaxis(self,title, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,##**yaxisTitleAndValue)
+            selfPlotter.multiplot_subplots_withXaxis('Steepest descent - W vs error', 1, 1, 'W', 'E[W]', 1,sd.w_vector,
+                                             steepest_descent = sd.error_test)
+            """Steepest descent - the histogram of the error- comparing ther error values for test and training data"""
+            #multiplot_subHists(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *bins, **yaxisTitleAndValue)
+            selfPlotter.multiplot_subHists('Steepest Descent- Training error vs Testing error',1,2,'SD-error values','SD-error count',1, 50,50,
+                                           training =sd.error_train,testing=sd.error_test)
 
-            rr.ridgeRegression (init_lambda=1,max_lamda=200,lambda_step=1,kfold_splits=5)
+            """########################################################################################################################################"""
+            """RIDGE REGRESSION"""
+            """Solves the problem of overfitting to training data by reducing the value of the W parameters through regularization"""
+            """Regularization - Penalising higher values of W by adding it to the cost function, with parameter lambda"""
+            """Lambda too low- normal Least square regression(may have overfitting), Lambda too low- Underfitting due too much bias"""
+            """Need to find the optimal lambda for the best model- Use K-fold validation for this"""
+            """In this program, I've used the variance between the MSE of the training and testing data as a measure to choose lambbda- 
+            Lower this value, then there is less overfitting to the training data"""
+
+            rr.ridgeRegression (init_lambda=0,max_lamda=200,lambda_step=0.5,kfold_splits=5)
 
             """Plot the progression of error values for the ridge regression algorithm"""
             parkinson.logger.info ("Plotting RIDGE Regression....")
-            selfPlotter.multiplot_sameX ('Error_progression for RIDGE Regression', 'Lambda_Value', 'Change in E[w]',
-                                         ChangeInError=rr.error)
-            selfPlotter.multiplot_sameX ('Parameter change for RIDGE Regression', 'Lambda_Value', 'Change in W',
-                                         ChangeInW=rr.w_vector)
+            selfPlotter.multiplot_withXvalues ('Error_progression for RIDGE Regression', 'Lambda_Value', 'Change in E[w]',rr.lambda_values,rr.lambda_values,
+                                         ChangeInErrorTrain=rr.error_train,ChangeInErrorTest=rr.error_test)
+            selfPlotter.multiplot_withXvalues ('Error_Variance_progression for RIDGE Regression', 'Lambda_Value', 'Change in variance of E[w]',rr.lambda_values,
+                                         trainVSTestError=rr.error_train_test_variance)
+
+            ##def multiplot_subplots_withXaxis(self, title, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,##**yaxisTitleAndValue)
+            selfPlotter.multiplot_subplots_withXaxis('Ridge regression - Lambda vs W',1, 1, 'Lambda value', 'W value', 1, rr.lambda_values,
+                                                     w_values=rr.w_vector)
+
+            ##def multiplot_subplots_withXaxis(self, title,sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,##**yaxisTitleAndValue)
+            selfPlotter.multiplot_subplots_withXaxis ('Ridge regression - W vs error',1, 1, 'W value', 'E[W]', 1, rr.w_vector,
+                                                      ridge_regression_error=rr.error_test)
+
+            """RIDGE regression - the histogram of the error- comparing ther error values for test and training data"""
+            #multiplot_subHists(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *bins, **yaxisTitleAndValue)
+            selfPlotter.multiplot_subHists('Ridge regression- Training error vs Testing error',1,2,'RR-error values','RR-error count',1, 50,50,
+                                           training =rr.error_train,testing=rr.error_test)
+
+            """########################################################################################################################################"""
+            """COMPARING ALL FOUR ESTIMATION METHODS"""
 
 
-            ##def multiplot_subplots_withXaxis(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,
-            ##**yaxisTitleAndValue)
-            selfPlotter.multiplot_subplots_withXaxis (1, 1, 'W', 'E[W]', 1, sd.w_vector,
-                                                      ridge_regression_error=sd.error)
+            """Plot actual testing target vs estimated testing target for the four different methods"""
+            """Comparing the estimates of the training data for each model"""
+            # --yhat_train versus y_train
+            selfPlotter.multiplot_sameX('yhat_train vs y_train', 'features',target_field,
+                                        originalData=parkinson.y_train, MSE=mse.yhat_train, Gradient=gd.yhat_train, Steepest_descent=sd.yhat_train,
+                                        ridge_regression=rr.yhat_train)
+
+            """Comparing the estimates of the testing data for each model"""
+            # --yhat_test versus y_test
+            selfPlotter.multiplot_sameX('yhat_test vs y_test', 'features',target_field,
+                                        originalData=parkinson.y_test, MSE=mse.yhat_test, Gradient=gd.yhat_test, Steepest_descent=sd.yhat_test,
+                                        ridge_regression=rr.yhat_test)
+
+            """########################################################################################################################################"""
 
 
         except (ArithmeticError, OverflowError,FloatingPointError,ZeroDivisionError) as mathError:
-            parkinson.logger.error('Mathemtical Failure at main', exc_info=True)
+            parkinson.logger.error('Mathematical Failure at main', exc_info=True)
             sys.exit()
         except (SystemExit, KeyboardInterrupt):
             sys.exit()

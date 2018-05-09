@@ -9,8 +9,8 @@ class CustomPlotter(Exception):
 
     def __init__(self):
         self.colorStyle = itertools.cycle(('b', 'g', 'r', 'y', 'k'))
-        self.markerStyle = itertools.cycle(('.', ',',  '+',  ','))
-        self.lineStyle = itertools.cycle(('-', '--', '-.'))
+        self.markerStyle = itertools.cycle(('.', ',',  '+',  ',','2','1'))
+        self.lineStyle = itertools.cycle(('-', '--', '-.', ':'))
 
         self.logger = logging.getLogger(__name__)
         path = ('log_config.json')
@@ -75,6 +75,7 @@ class CustomPlotter(Exception):
 
             if yaxisTitleAndValue is not None:
                 i = 0
+
                 for key, value in yaxisTitleAndValue.items():
                     self.logger.debug("plotting for key:" + str(key) + "with Value")
                     plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
@@ -88,13 +89,13 @@ class CustomPlotter(Exception):
             raise
 
         plt.title(title)
-        plt.legend(loc="lower right")
+        plt.legend(loc="upper right")
         plt.xlabel(xlabel)
         plt.ylabel(ylabel)
         plt.grid(True)
         plt.show()
 
-    def multiplot_subplots_withoutXaxis(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, **yaxisTitleAndValue):
+    def multiplot_subplots_withoutXaxis(self, title,sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, **yaxisTitleAndValue):
         titles = []
         values = []
         try:
@@ -123,10 +124,11 @@ class CustomPlotter(Exception):
         except Exception as e:
             self.logger.error('Failed to plot value', exc_info=True)
             raise
-
+        plt.title(title)
         plt.show()
 
-    def multiplot_subplots_withXaxis(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,
+
+    def multiplot_subplots_withXaxis(self, title,sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *xAxisValue,
                                      **yaxisTitleAndValue):
         titles = []
         values = []
@@ -161,9 +163,10 @@ class CustomPlotter(Exception):
             self.logger.error('Failed to plot value', exc_info=True)
             raise
 
+        plt.title(title)
         plt.show()
 
-    def multiplot_subHists(self, sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *bins, **yaxisTitleAndValue):
+    def multiplot_subHists(self, title,sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *bins, **yaxisTitleAndValue):
         titles = []
         values = []
         bin_values = []
@@ -185,7 +188,7 @@ class CustomPlotter(Exception):
                     ax = fig.add_subplot(sp_rows, sp_cols, Position[i])
                     self.logger.debug("plotting for row:" + str(row) + "-Col:" + str(col))
                     for w in range(valuesPerSubplot):
-                        ax.hist(values[i], bins=bin_values[i],normed=1, facecolor='g')
+                        ax.hist(values[i], bins=bin_values[i],density=1, facecolor='g')
                         ax.set_title(titles[i])
                         ax.set(xlabel=xlabel, ylabel=ylabel)
                         i = i + 1
@@ -198,5 +201,5 @@ class CustomPlotter(Exception):
         except Exception as e:
             self.logger.error('Failed to plot value', exc_info=True)
             raise
-
+        plt.title(title)
         plt.show()
