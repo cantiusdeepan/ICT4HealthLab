@@ -1,0 +1,322 @@
+2018-09-01 23:18:49,831 - __main__ - ERROR - Failed to read file
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 64, in readAndPrepCSVdata
+    na_values=['?', '\t?'],names=self.feature_Names, sep=',' )
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 705, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 445, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 814, in __init__
+    self._make_engine(self.engine)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 1045, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 1684, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas\_libs\parsers.pyx", line 391, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas\_libs\parsers.pyx", line 710, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: File b'./Data Source/chronic_kidney_disease.arff' does not exist
+2018-09-01 23:20:18,584 - __main__ - ERROR - Failed to read file
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 64, in readAndPrepCSVdata
+    na_values=['?', '\t?'],names=self.feature_Names, sep=',' )
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 705, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 445, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 814, in __init__
+    self._make_engine(self.engine)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 1045, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 1684, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas\_libs\parsers.pyx", line 391, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas\_libs\parsers.pyx", line 710, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: File b'.\\Data Source\\chronic_kidney_disease.arff' does not exist
+2018-09-01 23:22:03,782 - __main__ - ERROR - Failed to read file
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 65, in readAndPrepCSVdata
+    na_values=['?', '\t?'],names=self.feature_Names, sep=',' )
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 705, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 445, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 814, in __init__
+    self._make_engine(self.engine)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 1045, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\pandas\io\parsers.py", line 1684, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas\_libs\parsers.pyx", line 391, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas\_libs\parsers.pyx", line 710, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: File b'E:\\PoliTo - Classes,books and other docs\\Semester 3\\ICT for Health\\Labs\\Lab2\\Data Source\\chronic_kidney_disease.arff' does not exist
+2018-09-01 23:22:42,162 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 122, in readAndPrepCSVdata
+    special_characters=True)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\export.py", line 429, in export_graphviz
+    decision_tree.n_features_))
+ValueError: Length of feature_names, 24 does not match number of features, 23
+2018-09-01 23:23:30,701 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 122, in readAndPrepCSVdata
+    special_characters=True)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\export.py", line 429, in export_graphviz
+    decision_tree.n_features_))
+ValueError: Length of feature_names, 24 does not match number of features, 23
+2018-09-01 23:25:08,681 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 122, in readAndPrepCSVdata
+    special_characters=True)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\export.py", line 429, in export_graphviz
+    decision_tree.n_features_))
+ValueError: Length of feature_names, 24 does not match number of features, 23
+2018-09-01 23:34:06,114 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 122, in readAndPrepCSVdata
+    special_characters=True)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\export.py", line 429, in export_graphviz
+    decision_tree.n_features_))
+ValueError: Length of feature_names, 24 does not match number of features, 23
+2018-09-01 23:34:29,386 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 122, in readAndPrepCSVdata
+    special_characters=True)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\export.py", line 429, in export_graphviz
+    decision_tree.n_features_))
+ValueError: Length of feature_names, 24 does not match number of features, 23
+2018-09-01 23:36:19,340 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 122, in readAndPrepCSVdata
+    special_characters=True)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\export.py", line 429, in export_graphviz
+    decision_tree.n_features_))
+ValueError: Length of feature_names, 24 does not match number of features, 23
+2018-09-01 23:37:40,470 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 113, in readAndPrepCSVdata
+    clf_tree_drop = clf.fit (self.data_drop_domain, self.data_drop_target)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 790, in fit
+    X_idx_sorted=X_idx_sorted)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 116, in fit
+    X = check_array(X, dtype=DTYPE, accept_sparse="csc")
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\utils\validation.py", line 462, in check_array
+    context))
+ValueError: Found array with 0 sample(s) (shape=(0, 24)) while a minimum of 1 is required.
+2018-09-01 23:39:57,689 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 113, in readAndPrepCSVdata
+    clf_tree_drop = clf.fit (self.data_drop_domain, self.data_drop_target)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 790, in fit
+    X_idx_sorted=X_idx_sorted)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 116, in fit
+    X = check_array(X, dtype=DTYPE, accept_sparse="csc")
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\utils\validation.py", line 462, in check_array
+    context))
+ValueError: Found array with 0 sample(s) (shape=(0, 24)) while a minimum of 1 is required.
+2018-09-01 23:40:12,875 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 116, in readAndPrepCSVdata
+    clf_tree_drop = clf.fit (self.data_drop_domain, self.data_drop_target)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 790, in fit
+    X_idx_sorted=X_idx_sorted)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 116, in fit
+    X = check_array(X, dtype=DTYPE, accept_sparse="csc")
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\utils\validation.py", line 462, in check_array
+    context))
+ValueError: Found array with 0 sample(s) (shape=(0, 24)) while a minimum of 1 is required.
+2018-09-01 23:41:31,803 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 119, in readAndPrepCSVdata
+    clf_tree_drop = clf.fit (self.data_drop_domain, self.data_drop_target)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 790, in fit
+    X_idx_sorted=X_idx_sorted)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 116, in fit
+    X = check_array(X, dtype=DTYPE, accept_sparse="csc")
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\utils\validation.py", line 462, in check_array
+    context))
+ValueError: Found array with 0 sample(s) (shape=(0, 24)) while a minimum of 1 is required.
+2018-09-01 23:41:46,195 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 119, in readAndPrepCSVdata
+    clf_tree_drop = clf.fit (self.data_drop_domain, self.data_drop_target)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 790, in fit
+    X_idx_sorted=X_idx_sorted)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 116, in fit
+    X = check_array(X, dtype=DTYPE, accept_sparse="csc")
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\utils\validation.py", line 462, in check_array
+    context))
+ValueError: Found array with 0 sample(s) (shape=(0, 24)) while a minimum of 1 is required.
+2018-09-01 23:42:49,214 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 121, in readAndPrepCSVdata
+    clf_tree_drop = clf.fit (self.data_drop_domain, self.data_drop_target)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 790, in fit
+    X_idx_sorted=X_idx_sorted)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 116, in fit
+    X = check_array(X, dtype=DTYPE, accept_sparse="csc")
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\utils\validation.py", line 462, in check_array
+    context))
+ValueError: Found array with 0 sample(s) (shape=(0, 24)) while a minimum of 1 is required.
+2018-09-01 23:43:20,457 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 121, in readAndPrepCSVdata
+    clf_tree_drop = clf.fit (self.data_drop_domain, self.data_drop_target)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 790, in fit
+    X_idx_sorted=X_idx_sorted)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\tree.py", line 116, in fit
+    X = check_array(X, dtype=DTYPE, accept_sparse="csc")
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\utils\validation.py", line 462, in check_array
+    context))
+ValueError: Found array with 0 sample(s) (shape=(0, 24)) while a minimum of 1 is required.
+2018-09-01 23:43:52,600 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 132, in readAndPrepCSVdata
+    self.make_image (self.path+'\Tree_drop_final.dot', self.path+'\Tree_drop_final.png')
+TypeError: make_image() takes 2 positional arguments but 3 were given
+2018-09-01 23:44:40,962 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 132, in readAndPrepCSVdata
+    self.make_image (self.path+'\Tree_drop_final.dot', self.path+'\Tree_drop_final.png')
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 50, in make_image
+    png = sp.run(['dot', '-Tpng', input_name, '-o', output_name], stdout=sp.PIPE)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2018-09-01 23:46:06,122 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 133, in readAndPrepCSVdata
+    self.make_image (self.path+'\Tree_drop_final.dot', self.path+'\Tree_drop_final.png')
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 51, in make_image
+    png = sp.run(['dot', '-Tpng', input_name, '-o', output_name], stdout=sp.PIPE)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2018-09-01 23:49:06,994 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 134, in readAndPrepCSVdata
+    self.make_image (self.path+'\Tree_drop_final.dot', self.path+'\Tree_drop_final.png')
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 52, in make_image
+    png = sp.run(['dot', '-Tpng', input_name, '-o', output_name], stdout=sp.PIPE)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2018-09-01 23:49:48,757 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 134, in readAndPrepCSVdata
+    self.make_image ('\Tree_drop_final.dot', '\Tree_drop_final.png')
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 52, in make_image
+    png = sp.run(['dot', '-Tpng', input_name, '-o', output_name], stdout=sp.PIPE)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2018-09-01 23:49:56,372 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 134, in readAndPrepCSVdata
+    self.make_image ('.\Tree_drop_final.dot', '.\Tree_drop_final.png')
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 52, in make_image
+    png = sp.run(['dot', '-Tpng', input_name, '-o', output_name], stdout=sp.PIPE)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2018-09-01 23:50:15,019 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 134, in readAndPrepCSVdata
+    self.make_image ('Tree_drop_final.dot', 'Tree_drop_final.png')
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 52, in make_image
+    png = sp.run(['dot', '-Tpng', input_name, '-o', output_name], stdout=sp.PIPE)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2018-09-01 23:52:51,689 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 129, in readAndPrepCSVdata
+    special_characters=True)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\sklearn\tree\export.py", line 404, in export_graphviz
+    out_file = open(out_file, "w", encoding="utf-8")
+FileNotFoundError: [Errno 2] No such file or directory: 'output\\Tree_drop_final.dot'
+2018-09-01 23:54:30,432 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 131, in readAndPrepCSVdata
+    self.make_image ('Tree_drop_final.dot', 'Tree_drop_final.png')
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 52, in make_image
+    png = sp.run(['dot', '-Tpng', input_name, '-o', output_name], stdout=sp.PIPE)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2018-09-01 23:55:08,014 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 131, in readAndPrepCSVdata
+    self.make_image ('Tree_drop_final.dot', 'Tree_drop_final.png')
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 52, in make_image
+    png = sp.run(['dot', '-Tpng', input_name, '-o', output_name], stdout=sp.PIPE)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2018-09-01 23:55:36,991 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 131, in readAndPrepCSVdata
+    self.make_image (self.path+"\Tree_replace_final.dot", 'Tree_drop_final.png')
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 52, in make_image
+    png = sp.run(['dot', '-Tpng', input_name, '-o', output_name], stdout=sp.PIPE)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2018-09-01 23:56:21,245 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 131, in readAndPrepCSVdata
+    self.make_image (self.path+"\Tree_replace_final.dot", self.path+'Tree_drop_final.png')
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 52, in make_image
+    png = sp.run(['dot', '-Tpng', input_name, '-o', output_name], stdout=sp.PIPE)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Program Files (x86)\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2018-09-07 15:25:36,510 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 91, in readAndPrepCSVdata
+    self.data_replace1_domain = self.data_replace1.loc[:, :'anemia']
+AttributeError: 'KidneyDisease' object has no attribute 'data_replace1'
+2018-09-07 15:26:01,896 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 114, in readAndPrepCSVdata
+    self.data_replace1_target = self.data_replace_target.replace (to_be_replaced, to_replace)
+AttributeError: 'KidneyDisease' object has no attribute 'data_replace_target'
