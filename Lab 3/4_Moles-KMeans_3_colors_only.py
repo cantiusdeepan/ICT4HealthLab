@@ -19,6 +19,14 @@ ratio_lr_improved = []
 ratio_mr_improved = []
 ratio_hr_improved = []
 
+ratio_lr_first_running_mean = []
+ratio_mr_first_running_mean = []
+ratio_hr_first_running_mean = []
+
+ratio_lr_improved_running_mean = []
+ratio_mr_improved_running_mean = []
+ratio_hr_improved_running_mean = []
+
 ratio_first_all = []
 ratio_improved_all = []
 perimeter_first_all = []
@@ -86,6 +94,30 @@ def find_neighbour_values(image, i, j, rows, columns):
             i - 1, j + 1]) / 3
     else:
         right_neighbours_value = 0.0
+    #Top-left
+    if (i > 0 and j > 0):
+        top_left_neighbours_value = (img_2d_2colors[i - 1, j] + img_2d_2colors[i - 1, j - 1] + img_2d_2colors[
+            i , j - 1]) / 3
+    else:
+        top_left_neighbours_value = (top_neighbours_value+left_neighbours_value)/2
+    #Top-right
+    if (i > 0 and j < columns-1):
+        top_right_neighbours_value = (img_2d_2colors[i - 1, j] + img_2d_2colors[i - 1, j + 1] + img_2d_2colors[
+            i, j + 1]) / 3
+    else:
+        top_right_neighbours_value = (top_neighbours_value+right_neighbours_value)/2
+    #Bottom-right
+    if (i < rows-1  and j < columns-1):
+        bottom_right_neighbours_value = (img_2d_2colors[i + 1, j] + img_2d_2colors[i + 1, j + 1] + img_2d_2colors[
+            i, j + 1]) / 3
+    else:
+        bottom_right_neighbours_value = (down_neighbours_value+right_neighbours_value)/2
+    #Bottom-left
+    if (i < rows-1  and j > 0):
+        bottom_left_neighbours_value = (img_2d_2colors[i + 1, j] + img_2d_2colors[i + 1, j - 1] + img_2d_2colors[
+            i, j - 1]) / 3
+    else:
+        bottom_left_neighbours_value = (down_neighbours_value+left_neighbours_value)/2
 
     #print ("NEIGHBOUR AVERAGE VALUES::")
     #print ("top_neighbours_value:", top_neighbours_value)
@@ -104,10 +136,10 @@ def find_neighbour_values(image, i, j, rows, columns):
     # 4-TL,5-TR,6-BL,7-BR
 
     neighbour_values = [top_neighbours_value, down_neighbours_value, left_neighbours_value, right_neighbours_value]
-    neighbour_values.append ((neighbour_values[0] + neighbour_values[2]) / 2)
-    neighbour_values.append ((neighbour_values[0] + neighbour_values[3]) / 2)
-    neighbour_values.append ((neighbour_values[1] + neighbour_values[2]) / 2)
-    neighbour_values.append ((neighbour_values[1] + neighbour_values[3]) / 2)
+    neighbour_values.append (top_left_neighbours_value)
+    neighbour_values.append (top_right_neighbours_value)
+    neighbour_values.append (bottom_left_neighbours_value)
+    neighbour_values.append (bottom_right_neighbours_value)
 
     return neighbour_values
 
@@ -314,18 +346,34 @@ for file_name in file_name_list:
     # %% reading file and shaping it and then applying Kmeans fit
     file_path = 'Datasource/' + file_name + '.jpg'
 
+    if(file_name == "low_risk_10" or file_name== "melanoma_20" or file_name== "melanoma_27" or file_name== "medium_risk_1"):
+        continue
+
     im = mpimg.imread (file_path)
 
     [N1, N2, N3] = im.shape
     im_2D = im.reshape ((N1 * N2, N3))
 
     kmeans = KMeans (n_clusters=3, random_state=seed)
+
+
     kmeans.fit (im_2D)
 
     centroids = kmeans.cluster_centers_.astype ('uint8')
     labels = kmeans.labels_
 
+    imageRGB = im_2D.copy ( )
+
+    centroidsRGB = np.zeros ((3, 1, 3), dtype=np.uint8)
+
+    for cc in range (len (centroids)):
+        boolean = (labels == cc)
+        imageRGB[boolean, :] = centroids[cc, :]
+        centroidsRGB[cc] = centroids[cc]
+
     im_2D_3Colors = kmeans.predict (im_2D).reshape ((N1, N2))
+
+    im_RGB_3Colors = imageRGB.reshape ((N1, N2, N3))
 
     # %% Finding the index of the centroid with the darkest color and plotting the
     # new image with just three colors
@@ -338,6 +386,10 @@ for file_name in file_name_list:
     plt.figure ( )
     plt.imshow (im_2D_3Colors)
     plt.savefig ("Output/Kmeans/" + file_name + "_kmeans.png")
+
+    plt.figure ( )
+    plt.imshow (im_RGB_3Colors)
+    plt.savefig ("Output/RGB_3Colors/" + file_name + "_kmeans.png")
 
     # %%Finding median index
     darkest_pixels_check = (labels == darkest_color_index)
@@ -629,7 +681,7 @@ for file_name in file_name_list:
     current_point_main_loop_check_count = 0
     # Counter for How many times to loop to find the entire contour
     contour_points_list = []
-    for k in range (1, 5500):
+    for k in range (1, 6500):
         i = current_point[0]
         j = current_point[1]
 
@@ -897,14 +949,20 @@ for file_name in file_name_list:
     if "low_risk" in file_name:
         ratio_lr_first.append (ratio_contour)
         ratio_lr_improved.append(ratio_contour_improved)
+        ratio_lr_first_running_mean.append(np.mean(ratio_lr_first))
+        ratio_lr_improved_running_mean.append (np.mean (ratio_lr_improved))
 
     elif "medium_risk" in file_name:
         ratio_mr_first.append (ratio_contour)
         ratio_mr_improved.append(ratio_contour_improved)
+        ratio_mr_first_running_mean.append(np.mean(ratio_mr_first))
+        ratio_mr_improved_running_mean.append (np.mean (ratio_mr_improved))
 
     else:
         ratio_hr_first.append (ratio_contour)
         ratio_hr_improved.append(ratio_contour_improved)
+        ratio_hr_first_running_mean.append(np.mean(ratio_hr_first))
+        ratio_hr_improved_running_mean.append (np.mean (ratio_hr_improved))
 
     plt.close ("all")
 
@@ -932,9 +990,9 @@ print ("Melanoma_risk_IMPROVED:", np.mean (ratio_hr_improved))
 
 
 plt.figure ( )
-lr = plt.plot (ratio_lr_first, color='red', label='Low Risk')
-mr = plt.plot (ratio_mr_first, color='blue', label='Medium Risk')
-hr = plt.plot (ratio_hr_first, color='green', label='Melanoma')
+lr = plt.plot (ratio_lr_first, color='green', label='Low Risk')
+mr = plt.plot (ratio_mr_first, color='yellow', label='Medium Risk')
+hr = plt.plot (ratio_hr_first, color='red', label='Melanoma')
 plt.xlabel ("Picture")
 plt.ylabel ("Ratio")
 plt.title ("Ratio between perimeter of the mole and perimeter of the circle with the same area")
@@ -942,19 +1000,45 @@ plt.grid ( )
 plt.legend ( )
 
 #plt.savefig ("Output/Final/" + file_name + "_ratios.png")
-plt.savefig ("Output/Final/" + "a" + "_ratios.png")
+plt.savefig ("Output/Final/" + "First_contour_ratios.png")
 
 
 plt.figure ( )
-lr_improved = plt.plot (ratio_lr_improved, color='red', label='Low Risk')
-mr_improved = plt.plot (ratio_mr_improved, color='blue', label='Medium Risk')
-hr_improved = plt.plot (ratio_hr_improved, color='green', label='Melanoma')
+lr_improved = plt.plot (ratio_lr_improved, color='green', label='Low Risk')
+mr_improved = plt.plot (ratio_mr_improved, color='yellow', label='Medium Risk')
+hr_improved = plt.plot (ratio_hr_improved, color='red', label='Melanoma')
 plt.xlabel ("Picture")
 plt.ylabel ("Ratio")
-plt.title ("IMPROVED -- Ratio between perimeter of the mole and perimeter of the circle with the same area")
+plt.title ("IMPROVED -- Perimeter ratio")
 plt.grid ( )
 plt.legend ( )
-plt.savefig ("Output/Final/" + "b" + "_ratios_IMPROVED.png")
+plt.savefig ("Output/Final/" + "Contour_ratios_IMPROVED.png")
+
+
+plt.figure ( )
+lr = plt.plot (ratio_lr_first_running_mean, color='green', label='Low Risk')
+mr = plt.plot (ratio_mr_first_running_mean, color='yellow', label='Medium Risk')
+hr = plt.plot (ratio_hr_first_running_mean, color='red', label='Melanoma')
+plt.xlabel ("Picture")
+plt.ylabel ("Ratio")
+plt.title ("Ratio between perimeter of the mole and perimeter of the circle with the same area")
+plt.grid ( )
+plt.legend ( )
+
+#plt.savefig ("Output/Final/" + file_name + "_ratios.png")
+plt.savefig ("Output/Final/" + "RM_First_Contour_ratios.png")
+
+
+plt.figure ( )
+lr_improved = plt.plot (ratio_lr_improved_running_mean, color='green', label='Low Risk')
+mr_improved = plt.plot (ratio_mr_improved_running_mean, color='yellow', label='Medium Risk')
+hr_improved = plt.plot (ratio_hr_improved_running_mean, color='red', label='Melanoma')
+plt.xlabel ("Picture")
+plt.ylabel ("Ratio")
+plt.title ("IMPROVED -- Perimeter ratio")
+plt.grid ( )
+plt.legend ( )
+plt.savefig ("Output/Final/" + "RM_Contour_ratios_IMPROVED.png")
 
 plt.close ("all")
 
