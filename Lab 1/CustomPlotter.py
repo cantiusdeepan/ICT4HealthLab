@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import itertools
 import logging
+import logging.config
 import os
 import json
 
@@ -43,6 +44,31 @@ class CustomPlotter(Exception):
                 }
             })
 
+
+    def graph_plot(self, yaxis, xaxis, x_label, y_label, title):
+        plt.figure (figsize=(8, 5))
+        plt.scatter (xaxis, yaxis, color="red")
+        plt.plot (xaxis, xaxis)
+        plt.title (title)
+        plt.xlabel (x_label)
+        plt.ylabel (y_label)
+        plt.grid (True)
+        return
+
+
+    def weight_graph_plot(self,x, x_label, y_label, title, weight=1):
+        plt.figure (figsize=(8, 5))
+        if weight == 1:
+            plt.plot (x, 'ro')
+        else:
+            plt.plot (x)
+        plt.xlabel (x_label)
+        plt.ylabel (y_label)
+        plt.title (title)
+        #    plt.legend(loc="best")
+        plt.grid (True)
+        return
+
     def multiplot_sameX(self, title, xlabel, ylabel, **yaxisTitleAndValue):
 
         try:
@@ -72,6 +98,7 @@ class CustomPlotter(Exception):
             self.logger.debug("Reading the input args in multiplot_withXvalues")
             for x_value in xAxisValue:
                 x_values.append(x_value)
+            #self.logger.debug ("x_values=",x_values)
 
             if yaxisTitleAndValue is not None:
                 i = 0
@@ -80,6 +107,7 @@ class CustomPlotter(Exception):
                     self.logger.debug("plotting for key:" + str(key) + "with Value")
                     plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
                              color=next(self.colorStyle), label=key)
+
                     i = i + 1
         except (SystemExit, KeyboardInterrupt):
             raise
@@ -89,10 +117,11 @@ class CustomPlotter(Exception):
             raise
 
         plt.title(title)
-        plt.legend(loc="upper right")
+        plt.legend(loc="best")
         plt.xlabel(xlabel)
         plt.ylabel(ylabel)
         plt.grid(True)
+        plt.savefig ("Output/" + title+".png")
         plt.show()
 
     def multiplot_subplots_withoutXaxis(self, title,sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, **yaxisTitleAndValue):
@@ -165,6 +194,7 @@ class CustomPlotter(Exception):
 
         plt.title(title)
         plt.show()
+        plt.grid(True)
 
     def multiplot_subHists(self, title,sp_rows, sp_cols, xlabel, ylabel, valuesPerSubplot, *bins, **yaxisTitleAndValue):
         titles = []
@@ -188,7 +218,7 @@ class CustomPlotter(Exception):
                     ax = fig.add_subplot(sp_rows, sp_cols, Position[i])
                     self.logger.debug("plotting for row:" + str(row) + "-Col:" + str(col))
                     for w in range(valuesPerSubplot):
-                        ax.hist(values[i], bins=bin_values[i],density=1, facecolor='g')
+                        ax.hist(values[i], bins=bin_values[i],normed=1, facecolor='g')
                         ax.set_title(titles[i])
                         ax.set(xlabel=xlabel, ylabel=ylabel)
                         i = i + 1
@@ -203,3 +233,4 @@ class CustomPlotter(Exception):
             raise
         plt.title(title)
         plt.show()
+
