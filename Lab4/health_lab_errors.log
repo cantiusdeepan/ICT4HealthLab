@@ -1,0 +1,41 @@
+2018-11-15 16:14:45,967 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab4\CustomPlotter.py", line 82, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-11-15 16:18:02,110 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab4\CustomPlotter.py", line 82, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-11-15 16:19:38,930 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab4\CustomPlotter.py", line 84, in multiplot_withXvalues
+    color=next(self.colorStyle), label=key)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\pyplot.py", line 3317, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\__init__.py", line 1898, in inner
+    return func(ax, *args, **kwargs)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_axes.py", line 1406, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_base.py", line 407, in _grab_next_args
+    for seg in self._plot_args(remaining, kwargs):
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_base.py", line 385, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_base.py", line 244, in _xy_from_xy
+    "have shapes {} and {}".format(x.shape, y.shape))
+ValueError: x and y must have same first dimension, but have shapes (1, 11) and (11,)
+2018-11-15 16:33:12,368 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab4\CustomPlotter.py", line 85, in multiplot_withXvalues
+    plt.legend(loc="bottom right", label=key)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\pyplot.py", line 3797, in legend
+    ret = gca().legend(*args, **kwargs)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_axes.py", line 564, in legend
+    self.legend_ = mlegend.Legend(self, handles, labels, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'label'
+2018-11-15 16:48:00,036 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab4\CustomPlotter.py", line 83, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range

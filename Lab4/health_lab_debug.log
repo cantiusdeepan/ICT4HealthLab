@@ -1,0 +1,320 @@
+2018-11-15 16:14:45,967 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab4\CustomPlotter.py", line 82, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-11-15 16:18:02,067 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:18:02,068 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:18:02,110 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-15 16:18:02,110 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab4\CustomPlotter.py", line 82, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-11-15 16:19:38,872 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:19:38,886 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:19:38,930 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab4\CustomPlotter.py", line 84, in multiplot_withXvalues
+    color=next(self.colorStyle), label=key)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\pyplot.py", line 3317, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\__init__.py", line 1898, in inner
+    return func(ax, *args, **kwargs)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_axes.py", line 1406, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_base.py", line 407, in _grab_next_args
+    for seg in self._plot_args(remaining, kwargs):
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_base.py", line 385, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_base.py", line 244, in _xy_from_xy
+    "have shapes {} and {}".format(x.shape, y.shape))
+ValueError: x and y must have same first dimension, but have shapes (1, 11) and (11,)
+2018-11-15 16:24:59,240 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:24:59,240 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:24:59,247 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:24:59,247 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:24:59,295 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-15 16:24:59,297 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-15 16:33:12,320 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:33:12,326 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:33:12,368 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab4\CustomPlotter.py", line 85, in multiplot_withXvalues
+    plt.legend(loc="bottom right", label=key)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\pyplot.py", line 3797, in legend
+    ret = gca().legend(*args, **kwargs)
+  File "C:\Program Files (x86)\Python36-32\lib\site-packages\matplotlib\axes\_axes.py", line 564, in legend
+    self.legend_ = mlegend.Legend(self, handles, labels, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'label'
+2018-11-15 16:33:39,243 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:33:39,249 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:33:39,302 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-15 16:34:45,495 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:34:45,501 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:34:45,545 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-15 16:35:33,696 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:35:33,702 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:35:33,743 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-15 16:45:44,835 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:45:44,841 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:45:44,884 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-15 16:47:59,975 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:47:59,980 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:48:00,034 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-15 16:48:00,035 - CustomPlotter - DEBUG - plotting for key:selected_featureswith Value
+2018-11-15 16:48:00,036 - CustomPlotter - ERROR - Failed to plot value
+Traceback (most recent call last):
+  File "E:\PoliTo - Classes,books and other docs\Semester 3\ICT for Health\Labs\Lab4\CustomPlotter.py", line 83, in multiplot_withXvalues
+    plt.plot(x_values[i], value, marker=next(self.markerStyle), linestyle=next(self.lineStyle),
+IndexError: list index out of range
+2018-11-15 16:50:40,863 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:50:40,869 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:50:40,912 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-15 16:50:40,913 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-11-15 16:50:40,915 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-11-15 16:51:47,476 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:51:47,483 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-15 16:51:47,526 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-15 16:51:47,527 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-11-15 16:51:47,529 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-11-15 16:51:47,735 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-15 16:51:47,740 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-11-15 16:51:47,792 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-11-27 23:18:43,810 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-27 23:18:43,826 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-27 23:18:43,875 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-27 23:18:43,877 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-11-27 23:18:43,878 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-11-27 23:18:44,209 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-27 23:18:44,212 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-11-27 23:18:44,280 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-11-27 23:20:54,126 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-27 23:20:54,134 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-27 23:20:54,183 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-27 23:20:54,359 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-27 23:20:54,362 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-11-27 23:20:54,427 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-11-27 23:22:37,960 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-27 23:22:37,960 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-27 23:22:38,000 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-27 23:22:38,171 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-27 23:22:38,172 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-11-27 23:22:38,251 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-11-27 23:23:56,900 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-27 23:23:56,901 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-11-27 23:23:57,027 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-11-27 23:23:57,342 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-11-27 23:23:57,343 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-11-27 23:23:57,451 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-12-03 14:39:44,278 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:39:44,442 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:39:44,493 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:39:44,526 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:39:44,563 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:39:44,586 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:39:44,586 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-12-03 14:39:44,588 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-12-03 14:39:44,593 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:39:44,686 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:39:44,687 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-12-03 14:39:44,830 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-12-03 14:39:44,836 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:42:00,621 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:42:00,787 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:42:00,843 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:42:00,885 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:42:00,928 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:42:00,954 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:42:00,954 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-12-03 14:42:00,957 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-12-03 14:42:00,962 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:42:01,063 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:42:01,063 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-12-03 14:42:01,235 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-12-03 14:42:01,241 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:43:10,071 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:43:10,233 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:43:10,280 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:43:10,328 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:43:10,373 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:43:10,407 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:43:10,408 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-12-03 14:43:10,411 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-12-03 14:43:10,417 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:44:34,467 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:44:34,627 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:44:34,682 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:44:34,710 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:44:34,755 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:44:34,783 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:44:34,784 - CustomPlotter - DEBUG - plotting for key:sensitivitywith Value
+2018-12-03 14:44:34,785 - CustomPlotter - DEBUG - plotting for key:specificitywith Value
+2018-12-03 14:44:34,791 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:45:30,620 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:45:30,782 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:45:30,832 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:45:30,871 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:45:30,913 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:45:30,940 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:45:30,940 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:45:30,942 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:45:30,948 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:46:09,249 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:46:09,406 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:46:09,453 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:46:09,500 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:46:09,555 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:46:09,584 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:46:09,584 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:46:09,587 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:46:09,598 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:46:09,640 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:47:11,388 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:47:11,557 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:47:11,617 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:47:11,643 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:47:11,691 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:47:11,717 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:47:11,717 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:47:11,719 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:47:11,729 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:47:11,769 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:48:19,079 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:48:19,239 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:48:19,281 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:48:19,308 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:48:19,350 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:48:19,380 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:48:19,380 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:48:19,382 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:48:19,392 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:48:19,436 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:49:21,558 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:49:21,717 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:49:21,757 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:49:21,809 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:49:21,885 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:49:21,938 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:49:21,938 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:49:21,940 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:49:21,949 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:49:22,002 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:50:40,024 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:50:40,182 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:50:40,237 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:50:40,263 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:50:40,307 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:50:40,335 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:50:40,335 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:50:40,337 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:50:40,347 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:50:40,391 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:51:36,223 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:51:36,393 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:51:36,451 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:51:36,491 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:51:36,535 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:51:36,561 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:51:36,562 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:51:36,563 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:51:36,573 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:51:36,614 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:52:09,169 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:52:09,351 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:52:09,417 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:52:09,446 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:52:09,486 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:52:09,513 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:52:09,513 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:52:09,515 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:52:09,524 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:52:09,565 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:52:09,661 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:52:09,661 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-12-03 14:52:09,808 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-12-03 14:52:09,825 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:52:09,857 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:52:45,197 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:52:45,397 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:52:45,484 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:52:45,534 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:52:45,610 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:52:45,650 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:52:45,650 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:52:45,654 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:52:45,677 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:52:45,761 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:52:45,894 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:52:45,894 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-12-03 14:52:46,060 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-12-03 14:52:46,095 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:52:46,150 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:53:42,325 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:53:42,501 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:53:42,569 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:53:42,598 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:53:42,643 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:53:42,671 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:53:42,672 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:53:42,674 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:53:42,683 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:53:42,726 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:55:13,708 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:55:13,875 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:55:13,923 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:55:13,967 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:55:14,008 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:55:14,034 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:55:14,035 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-12-03 14:55:14,037 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-12-03 14:55:14,049 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:55:14,092 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:55:32,262 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:55:32,567 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:55:32,641 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:55:32,672 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:55:32,739 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:55:32,797 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:55:32,797 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:55:32,800 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:55:32,821 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:55:32,886 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:55:33,004 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:55:33,004 - CustomPlotter - DEBUG - plotting for key:selected_features_1with Value
+2018-12-03 14:55:33,165 - CustomPlotter - DEBUG - plotting for key:selected_features_2with Value
+2018-12-03 14:55:33,182 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:55:33,215 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:56:40,878 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 14:56:41,051 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 14:56:41,100 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:56:41,127 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:56:41,173 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 14:56:41,205 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:56:41,206 - CustomPlotter - DEBUG - plotting for key:sensitivity_with Value
+2018-12-03 14:56:41,208 - CustomPlotter - DEBUG - plotting for key:specificity_with Value
+2018-12-03 14:56:41,218 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:56:41,261 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:56:41,358 - CustomPlotter - DEBUG - Reading the input args in multiplot_withXvalues
+2018-12-03 14:56:41,359 - CustomPlotter - DEBUG - plotting for key:sensitivity_1with Value
+2018-12-03 14:56:41,511 - CustomPlotter - DEBUG - plotting for key:specificity_1with Value
+2018-12-03 14:56:41,528 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 14:56:41,555 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 15:18:41,212 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 15:18:41,374 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 15:18:41,417 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 15:18:53,328 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 15:18:53,496 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 15:18:53,553 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 15:18:53,580 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 15:18:53,621 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 15:31:07,516 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 15:31:07,713 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 15:31:07,769 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 15:31:07,808 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 15:31:07,844 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 22:26:25,754 - CustomPlotter - DEBUG - Reading the input args in multiplot_subHists
+2018-12-03 22:26:25,948 - CustomPlotter - DEBUG - plotting for row:0-Col:0
+2018-12-03 22:26:26,014 - matplotlib.axes._base - DEBUG - update_title_pos
+2018-12-03 22:26:26,041 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-12-03 22:26:26,085 - matplotlib.font_manager - DEBUG - findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('C:\\Users\\cantius\\AppData\\Local\\conda\\conda\\envs\\tensorflow_gpuenv1\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.

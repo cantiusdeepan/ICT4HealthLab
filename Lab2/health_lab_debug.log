@@ -320,3 +320,54 @@ Traceback (most recent call last):
   File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 114, in readAndPrepCSVdata
     self.data_replace1_target = self.data_replace_target.replace (to_be_replaced, to_replace)
 AttributeError: 'KidneyDisease' object has no attribute 'data_replace_target'
+2018-12-02 21:35:33,585 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 132, in readAndPrepCSVdata
+    plt.stem (self.feature_Names[0:24],feature_importance_drop)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\pyplot.py", line 2926, in stem
+    None else {}))
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\__init__.py", line 1810, in inner
+    return func(ax, *args, **kwargs)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\axes\_axes.py", line 2687, in stem
+    baseline, = self.plot([np.min(x), np.max(x)], [bottom, bottom],
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\fromnumeric.py", line 2442, in amin
+    initial=initial)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\fromnumeric.py", line 83, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+TypeError: cannot perform reduce with flexible type
+2018-12-02 21:36:08,104 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 132, in readAndPrepCSVdata
+    plt.stem (self.feature_Names,feature_importance_drop)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\pyplot.py", line 2926, in stem
+    None else {}))
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\__init__.py", line 1810, in inner
+    return func(ax, *args, **kwargs)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\axes\_axes.py", line 2678, in stem
+    marker=markermarker, label="_nolegend_")
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\__init__.py", line 1810, in inner
+    return func(ax, *args, **kwargs)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\axes\_axes.py", line 1611, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\axes\_base.py", line 393, in _grab_next_args
+    yield from self._plot_args(this, kwargs)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\axes\_base.py", line 370, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\axes\_base.py", line 231, in _xy_from_xy
+    "have shapes {} and {}".format(x.shape, y.shape))
+ValueError: x and y must have same first dimension, but have shapes (25,) and (24,)
+2018-12-02 21:36:51,881 - __main__ - ERROR - Failed to prepare the csv data
+Traceback (most recent call last):
+  File "E:/PoliTo - Classes,books and other docs/Semester 3/ICT for Health/Labs/Lab2/2_KidneyDisease_Main.py", line 134, in readAndPrepCSVdata
+    plt.stem (feature_names_list,feature_importance_drop)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\pyplot.py", line 2926, in stem
+    None else {}))
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\__init__.py", line 1810, in inner
+    return func(ax, *args, **kwargs)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\axes\_axes.py", line 2687, in stem
+    baseline, = self.plot([np.min(x), np.max(x)], [bottom, bottom],
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\fromnumeric.py", line 2442, in amin
+    initial=initial)
+  File "C:\Users\cantius\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\fromnumeric.py", line 83, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+TypeError: cannot perform reduce with flexible type

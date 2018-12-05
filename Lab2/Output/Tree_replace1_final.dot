@@ -1,0 +1,37 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label=<hemoglobin &le; 12.95<br/>entropy = 0.954<br/>samples = 400<br/>value = [150, 250]<br/>class = notckd>, fillcolor="#399de566"] ;
+1 [label=<serum creatinine &le; 1.15<br/>entropy = 0.174<br/>samples = 231<br/>value = [6, 225]<br/>class = notckd>, fillcolor="#399de5f8"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<sodium &le; 134.5<br/>entropy = 0.575<br/>samples = 44<br/>value = [6, 38]<br/>class = notckd>, fillcolor="#399de5d7"] ;
+1 -> 2 ;
+3 [label=<entropy = 0.0<br/>samples = 28<br/>value = [0, 28]<br/>class = notckd>, fillcolor="#399de5ff"] ;
+2 -> 3 ;
+4 [label=<hemoglobin &le; 3.55<br/>entropy = 0.954<br/>samples = 16<br/>value = [6, 10]<br/>class = notckd>, fillcolor="#399de566"] ;
+2 -> 4 ;
+5 [label=<albumin &le; 0.5<br/>entropy = 0.811<br/>samples = 8<br/>value = [6, 2]<br/>class = ckd>, fillcolor="#e58139aa"] ;
+4 -> 5 ;
+6 [label=<entropy = 0.0<br/>samples = 6<br/>value = [6, 0]<br/>class = ckd>, fillcolor="#e58139ff"] ;
+5 -> 6 ;
+7 [label=<entropy = 0.0<br/>samples = 2<br/>value = [0, 2]<br/>class = notckd>, fillcolor="#399de5ff"] ;
+5 -> 7 ;
+8 [label=<entropy = 0.0<br/>samples = 8<br/>value = [0, 8]<br/>class = notckd>, fillcolor="#399de5ff"] ;
+4 -> 8 ;
+9 [label=<entropy = 0.0<br/>samples = 187<br/>value = [0, 187]<br/>class = notckd>, fillcolor="#399de5ff"] ;
+1 -> 9 ;
+10 [label=<specific gravity &le; 1.017<br/>entropy = 0.605<br/>samples = 169<br/>value = [144, 25]<br/>class = ckd>, fillcolor="#e58139d3"] ;
+0 -> 10 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+11 [label=<albumin &le; -0.5<br/>entropy = 0.677<br/>samples = 28<br/>value = [5, 23]<br/>class = notckd>, fillcolor="#399de5c8"] ;
+10 -> 11 ;
+12 [label=<entropy = 0.0<br/>samples = 5<br/>value = [5, 0]<br/>class = ckd>, fillcolor="#e58139ff"] ;
+11 -> 12 ;
+13 [label=<entropy = 0.0<br/>samples = 23<br/>value = [0, 23]<br/>class = notckd>, fillcolor="#399de5ff"] ;
+11 -> 13 ;
+14 [label=<hypertension &le; 0.5<br/>entropy = 0.107<br/>samples = 141<br/>value = [139, 2]<br/>class = ckd>, fillcolor="#e58139fb"] ;
+10 -> 14 ;
+15 [label=<entropy = 0.0<br/>samples = 139<br/>value = [139, 0]<br/>class = ckd>, fillcolor="#e58139ff"] ;
+14 -> 15 ;
+16 [label=<entropy = 0.0<br/>samples = 2<br/>value = [0, 2]<br/>class = notckd>, fillcolor="#399de5ff"] ;
+14 -> 16 ;
+}
